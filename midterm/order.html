@@ -17,20 +17,23 @@
         <td><img src="img/order.png" height="250>"</td>
         <td>
           <p>Fresh hot pizza straight to your door!</p>
-          
-          <form method="post" action="https://www.stonecoldprofessor.com/pizza-order.php">
+
+          <form
+            method="post"
+            action="https://www.stonecoldprofessor.com/pizza-order.php"
+          >
             <h3>Customer Information</h3>
 
             <label for="first">First Name:</label>
-            <input name="first" id="first" type="text"><br>
+            <input name="first" id="first" type="text" /><br />
             <label for="last">Last Name:</label>
-            <input name="last" id="last" type="text"><br>
+            <input name="last" id="last" type="text" /><br />
             <label for="address1">Address 1:</label>
-            <input name="add1" id="address1" type="text" required><br>
+            <input name="add1" id="address1" type="text" required /><br />
             <label for="address2">Address 2:</label>
-            <input name="add2" id="address2" type="text"><br>
+            <input name="add2" id="address2" type="text" /><br />
             <label for="city">City:</label>
-            <input name="city" id="city" type="text" required><br>
+            <input name="city" id="city" type="text" required /><br />
             <label for="state">State:</label>
             <select name="state" id="state" required>
               <option value="al">Alabama</option>
@@ -82,14 +85,14 @@
               <option value="wa">Washington</option>
               <option value="wv">West Virginia</option>
               <option value="wi">Wisconsin</option>
-              <option value="wy">Wyoming</option>
-            </select><br>
+              <option value="wy">Wyoming</option></select
+            ><br />
             <label for="zip">Zip Code:</label>
-            <input name="zip" id="zip" type="text" required><br>
+            <input name="zip" id="zip" type="text" required /><br />
             <label for="phone">Phone Number:</label>
-            <input name="phone" id="phone" type="tel" required><br>
+            <input name="phone" id="phone" type="tel" required /><br />
             <label for="email">Email Address:</label>
-            <input name="email" id="email" type="email" required><br>
+            <input name="email" id="email" type="email" required /><br />
 
             <h3>Order Information</h3>
 
@@ -98,36 +101,66 @@
               <option value="small">Small</option>
               <option value="medium">Medium</option>
               <option value="large">Large</option>
-              <option value="family size">Family</option>
-            </select><br>
-            <br>
+              <option value="family size">Family</option></select
+            ><br />
+            <br />
 
             <label for="crust">Crust:</label>
-            <br>
-            <input name="crust" type="radio" value="thin">Thin<br>
-            <input name="crust" type="radio" value="thick">Thick<br>
-            <input name="crust" type="radio" value="stuffed">Stuffed<br>
-            <input name="crust" type="radio" value="cauliflower">Cauliflower (keto-friendly!)<br>
-            <br>
+            <br />
+            <input name="crust" type="radio" value="thin" />Thin<br />
+            <input name="crust" type="radio" value="thick" />Thick<br />
+            <input name="crust" type="radio" value="stuffed" />Stuffed<br />
+            <input name="crust" type="radio" value="cauliflower" />Cauliflower
+            (keto-friendly!)<br />
+            <br />
 
             <label for="toppings[]">Toppings:</label>
-            <br>
-            <input name="toppings[]" type="checkbox" value="bacon">Bacon<br>
-            <input name="toppings[]" type="checkbox" value="sausage">Sausage<br>
-            <input name="toppings[]" type="checkbox" value="pepperoni">Pepperoni<br>
-            <input name="toppings[]" type="checkbox" value="bell peppers">Bell peppers<br>
-            <input name="toppings[]" type="checkbox" value="mushrooms">Mushrooms<br>
-            <input name="toppings[]" type="checkbox" value="olives">Olives<br>
-            <input name="toppings[]" type="checkbox" value="onions">Onions<br>
-            <input name="toppings[]" type="checkbox" value="extra cheese">Extra cheese<br>
+            <br />
+            <input name="toppings[]" type="checkbox" value="bacon" />Bacon<br />
+            <input
+              name="toppings[]"
+              type="checkbox"
+              value="sausage"
+            />Sausage<br />
+            <input
+              name="toppings[]"
+              type="checkbox"
+              value="pepperoni"
+            />Pepperoni<br />
+            <input name="toppings[]" type="checkbox" value="bell peppers" />Bell
+            peppers<br />
+            <input
+              name="toppings[]"
+              type="checkbox"
+              value="mushrooms"
+            />Mushrooms<br />
+            <input
+              name="toppings[]"
+              type="checkbox"
+              value="olives"
+            />Olives<br />
+            <input
+              name="toppings[]"
+              type="checkbox"
+              value="onions"
+            />Onions<br />
+            <input
+              name="toppings[]"
+              type="checkbox"
+              value="extra cheese"
+            />Extra cheese<br />
 
             <h3>Comments</h3>
 
-            <textarea name="comments" placeholder="Whisper sweet nothings or say nothing!"></textarea><br>
-            <br>
+            <textarea
+              name="comments"
+              placeholder="Whisper sweet nothings or say nothing!"
+            ></textarea
+            ><br />
+            <br />
 
-            <input type="submit">
-            <input type="reset">
+            <input type="submit" />
+            <input type="reset" />
           </form>
         </td>
       </tr>
