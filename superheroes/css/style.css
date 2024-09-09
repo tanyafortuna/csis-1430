@@ -1,0 +1,60 @@
+* 
+{
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, sans-serif;
+}
+
+body
+{
+  width: 1024px;
+  margin: auto;
+}
+
+div
+{
+  width: 482px;
+  float: left;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 #888888, 0 6px 10px 0 #888888;
+}
+
+div div
+{
+  width: 442px;
+  margin: 20px auto;
+  padding: 20px;
+  float: none;
+  background-image: linear-gradient(#ffffff, #D3D3D3);
+  box-sizing: border-box;
+}
+
+div.batman, div.wonder-woman, div.superman
+{
+  box-shadow: 0 4px 8px 0 #001730, 0 6px 10px 0 #023b79;
+}
+
+div.spiderman, div.iron-man, div.thor
+{
+  box-shadow: 0 4px 8px 0 #2d0a0a, 0 6px 10px 0 #711b1b;
+}
+
+h1
+{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  font-size: 42px;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 8px white;
+}
+
+h2
+{
+ font-size: 26px;
+ padding-top: 5px;
+ padding-bottom: 20px;
+ font-weight: 500;
+ text-decoration: underline;
+}
