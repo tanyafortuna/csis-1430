@@ -1,0 +1,453 @@
+* /* Reset the page */
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*                                             */
+/* Class-based color and stacking scheme       */
+/* Space between z-indexes allows for one-off  */
+/* stacking configurations, when necessary     */
+/*                                             */
+.charcoal /* Page bg and eyes */
+{ 
+  background-color: #4b494a; 
+  /* No default z-index */
+} 
+.white /* Portrait bg and eye highlights */
+{ 
+  background-color: white; 
+  /* No default z-index */
+}
+.gold /* Face, and ear spots */
+{ 
+  background-color: #f5b85b; 
+  z-index: 0; /* Usually the bottommost color */
+}
+.beige /* Eye bg and lips */
+{
+  background-color: #ffd1b7;
+  z-index: 5; /* Usually the second color */
+}
+.tongue /* Darker pink tongue color */
+{
+  background-color: #f47094;
+  z-index: 10; /* Usually the third color */
+}
+.blush /* Cheek blush and main tongue color */
+{ 
+  background-color: #fc819d; 
+  z-index: 15; /* Usually the fourth color */
+}
+.orange /* Ear, and face spots */
+{ 
+  background-color: #ef972b; 
+  z-index: 20; /* Usually the top color */
+}
+
+/* Some divs later need relative positioning */
+.body { position: absolute; }
+
+/* Creates the portrait area, a box with rounded corners */
+.outer-frame
+{
+  width: 1000px;
+  height: 1000px;
+  margin: 70px auto;
+  border-radius: 75px;
+}
+
+/* Top row (just takes up space to push the dog head down) */
+.row1 { height: 200px; }
+
+/* Main content row - height of head */
+.row2 
+{ 
+  height: 650px; 
+  display: flex;
+  justify-content: center;
+}
+
+/* Square for the head shape */
+.dog-head
+{
+  width: 650px;
+  border-radius: 80px;
+}
+/* Rectangle for the forehead */
+.forehead
+{
+  width: 650px;
+  height: 200px;
+}
+
+/* Row for the eyes and bridge of nose */
+.eye-row /* Sets up the divs in the eye row */
+{
+  display: flex;
+  justify-content: center;
+}
+.eye.beige  /* Eye bg, with rounded top corners only */
+{
+  width: 162px;
+  height: 162px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+/* Rounds the bottom outside corners of the eyes  */
+/* Leaves the bottom inner corners of the eyes squared up */
+.left.eye.beige { border-bottom-left-radius: 100%; }
+.right.eye.beige { border-bottom-right-radius: 100%; }
+
+.eye.charcoal /* Round darker part of eye */
+{
+  width: 113px;
+  height: 113px;
+  border-radius: 100%;
+  position: relative;
+  z-index: 16; /* Needs to be above cheek blush */
+  top: 42px; 
+}
+/* Positions the two darker parts of the eyes */
+.left.eye.charcoal { left: 142px; }
+.right.eye.charcoal { left: -142px; }
+
+/* Bridge of nose (area between eyes), rectangle */
+.snoot
+{
+  width: 94px;
+  height: 68px;
+  margin-top: 94px;
+}
+
+/* Row for the lips and blush on cheeks*/
+.lip-row /* Sets up the divs in the lip row */
+{
+  display: flex;
+  justify-content: center;
+}
+.lip-row .corner /* Semi-circle for edges of lips */
+{
+  position: relative;
+  height: 8px;
+  width: 12px;
+  border-top-left-radius: 6px 8px;
+  border-top-right-radius: 6px 8px;
+  z-index: 6; /* Needs to be above beige */
+  top: -8px;
+}
+/* Positions the two edges of lips */
+.lip-row .left.corner { left: 190px; }
+.lip-row .right.corner { left: -190px; }
+
+.lip.charcoal /* Semi-circular ring for lips */
+{
+  position: relative;
+  width: 100px;
+  height: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  z-index: 3; /* Needs to be above tongue */
+}
+/* Positions the two lip rings */
+.left.lip.charcoal { left: 178px; }
+.right.lip.charcoal { left: -178px; }
+
+.lip.beige /* Semicircle for lighter part of lips */
+{
+  width: 76px;
+  height: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin: 0 5px;
+}
+
+.cheek /* Oval for pink cheek blush */
+{
+  width: 85px;
+  height: 48px;
+  border-radius: 100%;
+  position: relative;
+  top: -20px;
+}
+/* Positions the two cheek blushes */
+.left.cheek { left: -20px; }
+.right.cheek { right: -20px; }
+
+/* Row for the tongue*/
+.tongue /* Vertical rectangle with rounded bottom corners, sets up shape */
+{
+  width: 80px;
+  height: 110px;
+  border-bottom-left-radius: 38px 50px;
+  border-bottom-right-radius: 38px 50px;
+  position: relative;
+  top: -55px;
+  left: 285px;
+  z-index: 1; /* Needs to be above face but below everything else */
+}
+.tongue.blush /* The lighter part of the tongue overlaid onto the darker part */
+{
+  height: 102px;
+  top: -165px;
+  left: 285px;
+  z-index: 2; /* Needs to be above the darker tongue but below everything else */
+}
+
+/* Row for spots */
+.medium-spot /* Sets up a circular medium-size spot */
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: relative;
+}
+.big-spot /* Sets up a circular big-size spot */
+{
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  position: relative;
+}
+.chin.medium-spot /* Positions the medium chin spot */
+{
+  top: -135px;
+  left: 25px;
+}
+.chin.big-spot /* Positions the big chin spot */
+{
+  top: -135px;
+  left: 60px;
+}
+.pupil /* Sets up a circular pupil spot */
+{
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  position: relative;
+  z-index: 17;
+}
+.left.pupil /* Positions the left pupil */
+{
+  top: -477px;
+  left: 208px;
+}
+.right.pupil /* Positions the right pupil */
+{
+  top: -515px;
+  left: 410px;
+}
+.small-spot /* Sets up a circular small size spot for eye shinies */
+{
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  position: relative;
+  z-index: 17;
+}
+.left.small-spot /* Positions the left eye's small spot */
+{
+  top: -489px;
+  left: 174px;
+}
+.right.small-spot /* Positions the right eye's small spot */
+{
+  top: -512px;
+  left: 473px;
+}
+.tiny-spot /* Sets up a circular tiny size small spot for eye shinies */
+{
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  position: relative;
+  z-index: 17;
+}
+.left.tiny-spot /* Positions the left eye's tiny spot */
+{
+  top: -501px;
+  left: 191px;
+}
+.right.tiny-spot /* Positions the right eye's tiny spot */
+{
+  top: -544px;
+  left: 487px;
+}
+
+/* Row for nose */
+.nose-row .top.corner /* A circle to be used for the top nose corners */
+{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 6; /* Needs to be above beige */
+}
+.nose-row .top.left.corner /* Positions the top left corner of the nose */
+{ 
+  left: 283px;
+  top: -562px;
+}
+.nose-row .top.right.corner /* Positions the top right corner of the nose */
+{ 
+  left: 341px;
+  top: -614px;
+}
+.nose-row .center /* Rectangle, top part of the nose (connects the corners) */
+{
+  height: 26px;
+  width: 54px;
+  position: relative;
+  z-index: 6; /* Needs to be above beige */
+  left: 298px;
+  top: -588px;
+}
+.nose-row .bottom.point /* An oval to be used for the bottom nose corner */
+{
+  width: 22px;
+  height: 10px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 6; /* Needs to be above beige */
+  top: -581px;
+  left: 314px;
+}
+.nose-row .middle /* Triangle-ish (flat bottom corner) for middle of nose */
+{
+  box-sizing: content-box; 
+  background-color: transparent;
+  width: 24px; /* This flattens the bottom corner */
+  border-top: 42px solid #4b494a; /* What we see - the triangle-ish */
+  border-left: 26px solid transparent; /* Invisible, needed to make the triangle */
+  border-right: 26px solid transparent; /* Invisible, needed to make the triangle */
+  position: relative;
+  z-index: 6; /* Needs to be above beige */
+  top: -627px;
+  left: 287px;
+}
+
+/* Row for ear */
+.ear-row .corner /* Circle for outside point of ears */
+{
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  position: relative;
+}
+.ear-row .bottom.point /* Circle for bottom point of ears */
+{
+  height: 125px;
+  width: 125px;
+  border-radius: 100%;
+  position: relative;
+}
+.ear-row .inside.area /* Rectangle, inside line of ear (connects top and bottom corners) */
+{
+  height: 190px;
+  width: 100px;
+  position: relative;
+}
+.ear-row .outside.area /* Triangle-ish (flat outside corner) for middle of ear */
+{
+  box-sizing: content-box; 
+  background-color: transparent;
+  width: 0px;
+  height: 73px; /* This flattens the bottom corner */
+  border-right: 185px solid #ef972b; /* What we see - the triangle-ish */
+  border-top: 98px solid transparent; /* Invisible, needed to make the triangle */
+  border-bottom: 111px solid transparent; /* Invisible, needed to make the triangle */
+  position: relative;
+}
+.ear-row .top.mound /* Long short semi-oval to round off the top of the ears */
+{
+  height: 30px;
+  width: 264px;
+  border-top-left-radius: 132px 30px;
+  border-top-right-radius: 132px 30px;
+  position: relative;
+}
+
+/* Left ear specific parts */
+.ear-row .left.outside.corner /* Position it */
+{
+  top: -930px;
+  left: -135px;
+}
+.ear-row .left.top.corner /* Position it */
+{
+  top: -1095px;
+  left: 68px;
+}
+.ear-row .left.bottom.point /* Position it */
+{
+  top: -1005px;
+  left: 13px;
+}
+.ear-row .left.inside.area /* Position it, need to rotate it too */
+{
+  top: -1253px;
+  left: 43px;
+  transform: rotate(3deg);
+}
+.ear-row .left.outside.area /* Position it, need to rotate it too */
+{
+  top: -1492px;
+  left: -117px;
+  transform: rotate(7.25deg);
+}
+.ear-row .left.top.mound /* Position it, need to rotate it too */
+{
+  top: -1743px;
+  left: -142px;
+  transform: rotate(-23deg);
+}
+
+/* Right ear specific parts */
+.ear-row .right.outside.corner /* Position it */
+{
+  top: -1717px;
+  left: 708px;
+}
+.ear-row .right.top.corner /* Position it */
+{
+  top: -1882px;
+  left: 501px;
+}
+.ear-row .right.bottom.point /* Position it */
+{
+  top: -1792px;
+  left: 512px;
+}
+.ear-row .right.inside.area /* Position it, need to rotate it too */
+{
+  top: -2040px;
+  left: 507px;
+  transform: rotate(-3deg);
+}
+.ear-row .right.outside.area /* Position it, need to rotate it too */
+{
+  top: -2283px;
+  left: 575px;
+  transform: rotate(170deg);
+}
+.ear-row .right.top.mound /* Position it, need to rotate it too */
+{
+  top: -2530px;
+  left: 529px;
+  transform: rotate(23deg);
+}
+
+/* Ear spots */
+.ear.medium-spot /* Position a medium ear spot */
+{
+  top: -2537px;
+  left: 605px;
+  z-index: 21; /* Needs to be above orange ear */
+}
+.ear.big-spot /* Position a big ear spot */
+{
+  top: -2539px;
+  left: 650px;
+  z-index: 21; /* Needs to be above orange ear */
+}
