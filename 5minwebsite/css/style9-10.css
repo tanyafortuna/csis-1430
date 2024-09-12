@@ -1,0 +1,16 @@
+body {
+  background-color: teal;
+  position: absolute;
+}
+
+h1 {
+  color: indianred;
+}
+
+li {
+  color: purple;
+}
+
+ul {
+  border: 10px double white;
+}
