@@ -2,49 +2,53 @@
 <html lang="en">
 <head>
   <title>Peppi's Pizza Parlor</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
   <nav>
+    <p>Peppi's Pizza's Parlor</p>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="order.html">Order</a></li>
+      <li><a href="index.html">home</a></li>
+      <li><a href="contact.html" class="current">contact</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="order.html">order</a></li>
     </ul>
   </nav>
-  <h1>Contact Us</h1>
+  <main>
+    <h1>Contact Us</h1>
 
-  <form method="post" action="https://www.stonecoldprofessor.com/pizza-contact.php">
-    <label for="first-name">First Name:</label>
-    <input 
-      name="first-name" 
-      id="first-name" 
-      type="text" 
-      placeholder="First name"
-    /><br>
-    <label for="last-name">Last Name:</label>
-    <input 
-      name="last-name" 
-      id="last-name" 
-      type="text" 
-      placeholder="Last name"
-    /><br>
-    <label for="email">Email address:</label>
-    <input 
-      name="email" 
-      id="email" 
-      type="text" 
-      placeholder="Email address"
-    /><br>
-    <label for="message">Your message:</label>
-    <textarea 
-      name="message" 
-      id="message" 
-      placeholder="Nice comments only!!"
-    ></textarea><br>
-    <br>
-    <input type="submit" value="Send">
-    <input type="reset" value="Clear">
-  </form>
+    <form method="post" action="https://www.stonecoldprofessor.com/pizza-contact.php">
+      <label for="first-name">First Name:</label>
+      <input 
+        name="first-name" 
+        id="first-name" 
+        type="text" 
+        placeholder="First name"
+      /><br>
+      <label for="last-name">Last Name:</label>
+      <input 
+        name="last-name" 
+        id="last-name" 
+        type="text" 
+        placeholder="Last name"
+      /><br>
+      <label for="email">Email address:</label>
+      <input 
+        name="email" 
+        id="email" 
+        type="text" 
+        placeholder="Email address"
+      /><br>
+      <label for="message">Your message:</label>
+      <textarea 
+        name="message" 
+        id="message" 
+        placeholder="Nice comments only!!"
+      ></textarea><br>
+      <br>
+      <input type="submit" value="Send">
+      <input type="reset" value="Clear">
+    </form>
+  </main>
 </body>
 </html>
