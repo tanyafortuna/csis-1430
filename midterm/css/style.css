@@ -58,3 +58,13 @@ nav p
   padding-left: 20px;
   letter-spacing: -2px;
 }
+
+/* Main */
+main
+{
+  background-color: #fbf0e2;
+  height: 665px;
+  border: 2px solid #6c2f2b;
+  border-top: none;
+  position: relative;
+}
