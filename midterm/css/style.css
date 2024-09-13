@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
+}
+body
+{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/* Nav */
+nav ul
+{
+  display: flex;
+  justify-content: right;
+  list-style-type: none;
+  padding-right: 15px;
+  background-color: #6c2f2b;
+}
+
+/* Nav links */
+nav a 
+{ 
+  display: inline-block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-size: 30px;
+  padding: 10px 15px;
+  color: #fbf0e2; 
+  text-decoration: none;
+}
+nav a:visited { color: #fbf0e2; }
+nav a:hover { color: #fad3a0; }
+nav a.current
+{
+  color: #659a63;
+  background-color: #fbf0e2;
+  pointer-events: none;
+  cursor: default;
+  font-weight: 600;
+}
+
+/* Restaurant name in nav */
+nav p
+{
+  height: 80px;
+  text-align: left;
+  color: #fad3a0;
+  background-color: #6c2f2b;
+  font-family: "Lemonada", sans-serif;
+  font-size: 40px;
+  padding-left: 20px;
+  letter-spacing: -2px;
+}
