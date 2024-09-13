@@ -68,3 +68,81 @@ main
   border-top: none;
   position: relative;
 }
+main div
+{
+  font-size: 24px;
+  color: #6c2f2b;
+  padding: 20px 100px;
+  text-align: justify;
+}
+h1
+{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  color: #6c2f2b;
+}
+em
+{
+  display: block;
+  text-align: center;
+  padding-top: 15px;
+  letter-spacing: -1px;
+}
+
+/* Form formatting */
+form div
+{
+  display: flex;
+  justify-content: center;
+  padding: 4px 0;
+  width: 525px;
+}
+label, input, textarea
+{
+  display: inline-block;
+  height: 38px;
+}
+label
+{
+  width: 200px;
+  padding: 4px 0;
+}
+input, textarea
+{
+  width: 325px;
+  font-size: 18px;
+}
+textarea
+{
+  height: 118px;
+  padding-top: 5px;
+}
+input.button
+{
+  width: 150px;
+  margin: 5px;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 24px;
+}
+input.button.submit
+{
+  color: #fbf0e2;
+  background-color: #6fa26b;
+}
+input.button.clear
+{
+  color: #6c2f2b;
+  background-color: #fad3a0;
+}
+
+/* Page-specific */
+.contact img
+{
+  position: absolute;
+  bottom: 75px;
+  right: 100px;
+  height: 300px;
+  width: 194px;
+}
