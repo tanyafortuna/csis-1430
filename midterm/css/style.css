@@ -146,3 +146,12 @@ input.button.clear
   height: 300px;
   width: 194px;
 }
+
+.about img
+{
+  position: absolute;
+  bottom: 75px;
+  right: 100px;
+  height: 280px;
+  width: 262px;
+}
