@@ -155,3 +155,12 @@ input.button.clear
   height: 280px;
   width: 262px;
 }
+
+.index img
+{
+  position: absolute;
+  bottom: 75px;
+  left: 344px;
+  height: 300px;
+  width: 312px;
+}
