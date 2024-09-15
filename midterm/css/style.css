@@ -1,22 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&family=Nanum+Gothic:wght@400;700;800&display=swap');
 
-* 
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Nanum Gothic", sans-serif;
 }
-body
-{
+body {
   width: 1000px;
   margin: 0 auto;
 }
 
 /* Nav */
-nav ul
-{
+nav ul {
   display: flex;
   justify-content: right;
   list-style-type: none;
@@ -25,8 +21,7 @@ nav ul
 }
 
 /* Nav links */
-nav a 
-{ 
+nav a { 
   display: inline-block;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -37,8 +32,7 @@ nav a
 }
 nav a:visited { color: #fbf0e2; }
 nav a:hover { color: #fad3a0; }
-nav a.current
-{
+nav a.current {
   color: #659a63;
   background-color: #fbf0e2;
   pointer-events: none;
@@ -47,8 +41,7 @@ nav a.current
 }
 
 /* Restaurant name in nav */
-nav p
-{
+nav p {
   height: 80px;
   text-align: left;
   color: #fad3a0;
@@ -60,107 +53,281 @@ nav p
 }
 
 /* Main */
-main
-{
+main {
   background-color: #fbf0e2;
   height: 665px;
   border: 2px solid #6c2f2b;
   border-top: none;
   position: relative;
 }
-main div
-{
+main > div {
   font-size: 24px;
   color: #6c2f2b;
   padding: 20px 100px;
   text-align: justify;
 }
-h1
-{
+h1 {
   text-align: center;
   padding-top: 40px;
   padding-bottom: 20px;
   color: #6c2f2b;
 }
-em
-{
+em {
   display: block;
   text-align: center;
   padding-top: 15px;
   letter-spacing: -1px;
 }
 
-/* Form formatting */
-form div
-{
-  display: flex;
-  justify-content: center;
-  padding: 4px 0;
-  width: 525px;
-}
-label, input, textarea
-{
-  display: inline-block;
-  height: 38px;
-}
-label
-{
-  width: 200px;
-  padding: 4px 0;
-}
-input, textarea
-{
-  width: 325px;
-  font-size: 18px;
-}
-textarea
-{
-  height: 118px;
-  padding-top: 5px;
-}
-input.button
-{
-  width: 150px;
-  margin: 5px;
-  border-radius: 15px;
-  font-weight: 700;
-  font-size: 24px;
-}
-input.button.submit
-{
-  color: #fbf0e2;
-  background-color: #6fa26b;
-}
-input.button.clear
-{
-  color: #6c2f2b;
-  background-color: #fad3a0;
-}
-
-/* Page-specific */
-.contact img
-{
+/* Images */
+.contact img {
   position: absolute;
   bottom: 75px;
   right: 100px;
   height: 300px;
   width: 194px;
 }
-
-.about img
-{
+.about img {
   position: absolute;
   bottom: 75px;
   right: 100px;
   height: 280px;
   width: 262px;
 }
-
-.index img
-{
+.index img {
   position: absolute;
   bottom: 75px;
   left: 344px;
   height: 300px;
   width: 312px;
+}
+.order img {  }
+
+/* Contact form formatting */
+.contact form div {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0;
+  width: 525px;
+}
+.contact label {
+  display: inline-block;
+  height: 38px;
+  width: 200px;
+  padding: 4px 0;
+}
+.contact input {
+  display: inline-block;
+  height: 38px;
+  width: 325px;
+  font-size: 18px;
+}
+.contact textarea {
+  display: inline-block;
+  font-size: 18px;
+  width: 325px;
+  height: 118px;
+  padding-top: 5px;
+}
+
+/* Order form formatting */
+.order div {
+  font-size: 18px;
+  color: #6c2f2b;
+}
+.order p { 
+  padding: 8px 0; 
+  font-size: 24px;
+  text-align: center;
+  margin: 0 auto;
+}
+.order .two-columns {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  width: 920px;
+}
+.order .left-column {
+  width: 440px;
+  margin-right: 20px;
+}
+.order .right-column {
+  width: 440px;
+  margin-left: 20px;
+}
+.two-columns > div > div {
+  display: flex;
+  width: 440px;
+  padding: 2px 0;
+}
+
+/* Order form customer info formatting */
+.customer-info label
+{
+  display: inline-block;
+  font-size: 18px;
+  width: 110px;
+  height: 30px;
+  text-align: left;
+  padding: 5px;
+}
+.customer-info input
+{
+  font-size: 18px;
+  width: 330px;
+  height: 30px;
+  padding: 3px;
+}
+.customer-info.zip { width: 150px; }
+.customer-info #zip { width: 105px; }
+.customer-info.state
+{
+  float: left;
+  width: 275px;
+  margin-right: 15px;
+}
+.customer-info #state
+{
+  width: 165px;
+  font-size: 18px;
+}
+.order .left-column textarea { 
+  width: 440px;
+  height: 72px; 
+  font-size: 18px;
+  padding: 3px;
+  resize: none;
+}
+
+/* Order form pizza info formatting */
+.order .right-column { border: 1px solid sienna; }
+
+/* Order form crust formatting */
+.pizza-info.crust label
+{
+  display: xsblock;
+  font-size: 18px;
+  width: 110px;
+  height: 30px;
+  text-align: left;
+  padding: 5px;
+}
+#crust
+{
+  font-size: 18px;
+  width: 330px;
+  height: 30px;
+  padding: 3px;
+  font-size: 18px;
+}
+
+/* Order form size formatting */
+.pizza-info.sizing {
+  justify-content: center;
+  align-items: center;
+}
+.sizing > label { /* Do I need this */
+  width: 440px;
+}
+.pizza-info .small, .pizza-info .medium, .pizza-info .large, .pizza-info .family {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fad3a0;
+  margin: 5px 7px;
+}
+.pizza-info .small {
+  height: 75px;
+  width: 75px;
+  font-size: 14px;
+  margin-left: 2px;
+}
+.pizza-info .medium {
+  height: 90px;
+  width: 90px;
+  font-size: 16px;
+}
+.pizza-info .large {
+  height: 105px;
+  width: 105px;
+  font-size: 18px;
+}
+.pizza-info .family {
+  height: 120px;
+  width: 120px;
+  font-size: 20px;
+  margin-right: 2px;
+}
+#small, #medium, #large, #family {
+  position: absolute;
+  border-radius: 50%;
+  appearance: none;
+}
+#small {
+  top: 209px;
+  left: 524px;
+  height: 75px;
+  width: 75px;
+}
+#medium {
+  top: 201px;
+  left: 612px;
+  height: 90px;
+  width: 90px;
+}
+#large {
+  top: 193px;
+  left: 716px;
+  height: 105px;
+  width: 105px;
+}
+#family {
+  top: 186px;
+  left: 834px;
+  height: 120px;
+  width: 120px;
+}
+#small:checked, #medium:checked, #large:checked, #family:checked {
+  accent-color: #fad3a0;
+  border: 6px solid peru;
+}
+
+/* Order form toppings formatting */
+.pizza-info.toppings {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid purple; */
+}
+.toppings .topping {
+  height: 100px;
+  width: 100px;
+  /* border: 1px solid teal; */
+  margin: 4px;
+  text-align: center;
+  font-size: 16px;
+}
+.topping img {
+  height: 70px;
+}
+
+
+/* Form button formatting */
+input.button {
+  display: inline-block;
+  height: 38px;
+  width: 150px;
+  margin: 5px;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 24px;
+}
+input.button.submit {
+  color: #fbf0e2;
+  background-color: #6fa26b;
+}
+input.button.clear {
+  color: #6c2f2b;
+  background-color: #fad3a0;
 }
