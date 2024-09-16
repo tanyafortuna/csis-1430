@@ -15,7 +15,7 @@
       </ul>
     </nav>
     <main class="order">
-      <h1>Fresh hot pizza straight to your door!</h1>
+      <h1>Fresh, hot pizza straight to your door!</h1>
 
       <form method="post" action="https://www.stonecoldprofessor.com/pizza-order.php">
         <div class="two-columns">
@@ -114,64 +114,64 @@
             </div>
             
             <div class="pizza-info sizing">
-              <!-- <label for="size">Size:</label> -->
-              <div class="small"><label>Small<br>
+              <div class="size-heading"><p>Size:</p></div>
+              <div class="sizes small"><label>Small<br>
                 <input name="size" type="radio" value="small" id="small">
               </label></div>
-              <div class="medium"><label>Medium
+              <div class="sizes medium"><label>Medium
                 <input name="size" type="radio" value="medium" id="medium">
               </label></div>
-              <div class="large"><label>Large
+              <div class="sizes large"><label>Large
                 <input name="size" type="radio" value="large" id="large">
               </label></div>
-              <div class="family"><label>Family size
+              <div class="sizes family"><label>Family size
                 <input name="size" type="radio" value="family" id="family">
               </label></div>
             </div>
 
             <div class="pizza-info toppings">
-              <!-- <label for="toppings[]">Toppings:</label> -->
+              <div class="toppings-heading"><p>Toppings:</p></div>
               <div class="topping bacon"><label>
-                <img src="img/toppings/bacon.png">Bacon
-                <input name="toppings[]" type="checkbox" value="bacon">
+                <img src="img/toppings/bacon.png">
+                <input name="toppings[]" type="checkbox" value="bacon" id="bacon">
               </label></div>
               <div class="topping sausage"><label>
-                <img src="img/toppings/sausage.png">Sausage
-                <input name="toppings[]" type="checkbox" value="sausage">
+                <img src="img/toppings/sausage.png">
+                <input name="toppings[]" type="checkbox" value="sausage" id="sausage">
               </label></div>
               <div class="topping pepperoni"><label>
-                <img src="img/toppings/pepperoni.png">Pepperoni
-                <input name="toppings[]" type="checkbox" value="pepperoni">
+                <img src="img/toppings/pepperoni.png">
+                <input name="toppings[]" type="checkbox" value="pepperoni" id="pepperoni">
+              </label></div>
+              <div class="topping anchovies"><label>
+                <img src="img/toppings/anchovy.png">
+                <input name="toppings[]" type="checkbox" value="anchovies" id="anchovies">
               </label></div>
               <div class="topping peppers"><label>
-                <img src="img/toppings/bellpepper.png">Bell peppers
-                <input name="toppings[]" type="checkbox" value="bell peppers">
+                <img src="img/toppings/bellpepper.png"> 
+                <input name="toppings[]" type="checkbox" value="bell peppers" id="peppers">
               </label></div>
               <div class="topping mushrooms"><label>
-                <img src="img/toppings/mushrooms.png">Mushrooms
-                <input name="toppings[]" type="checkbox" value="mushrooms">
-              </label></div>
-              <div class="topping olives"><label>
-                <img src="img/toppings/olives.png">Olives
-                <input name="toppings[]" type="checkbox" value="olives">
+                <img src="img/toppings/mushrooms.png">
+                <input name="toppings[]" type="checkbox" value="mushrooms" id="mushrooms">
               </label></div>
               <div class="topping onions"><label>
-                <img src="img/toppings/onion.png">Onions
-                <input name="toppings[]" type="checkbox" value="onions">
+                <img src="img/toppings/onion.png">
+                <input name="toppings[]" type="checkbox" value="onions" id="onions">
               </label></div>
               <div class="topping cheese"><label>
-                <img src="img/toppings/cheese.png">Extra cheese
-                <input name="toppings[]" type="checkbox" value="extra cheese">
+                <img src="img/toppings/cheese.png">
+                <input name="toppings[]" type="checkbox" value="extra cheese" id="cheese">
               </label></div>
             </div>
           </div>
         </div>
 
-        <input type="submit" value="Gimme!" class="button submit"/>
-        <input type="reset" value="Nevermind" class="button clear"/>
+        <div class="buttons-row">
+          <input type="submit" value="Gimme!" class="button submit"/>
+          <input type="reset" value="Nevermind" class="button clear"/>
+        </div>
       </form>
-
-      <!-- <img src="img/order.png" height="250"> -->
     </main>
   </body>
 </html>

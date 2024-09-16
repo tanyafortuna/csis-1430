@@ -160,6 +160,12 @@ em {
   width: 440px;
   padding: 2px 0;
 }
+.buttons-row {
+  width: 1000px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
 
 /* Order form customer info formatting */
 .customer-info label
@@ -193,14 +199,11 @@ em {
 }
 .order .left-column textarea { 
   width: 440px;
-  height: 72px; 
+  height: 100px; 
   font-size: 18px;
   padding: 3px;
   resize: none;
 }
-
-/* Order form pizza info formatting */
-.order .right-column { border: 1px solid sienna; }
 
 /* Order form crust formatting */
 .pizza-info.crust label
@@ -223,13 +226,23 @@ em {
 
 /* Order form size formatting */
 .pizza-info.sizing {
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-.sizing > label { /* Do I need this */
+.size-heading {
   width: 440px;
+  height: 18px;
+  margin-top: 8px;
+  margin-left: 5px;
 }
-.pizza-info .small, .pizza-info .medium, .pizza-info .large, .pizza-info .family {
+.size-heading p {
+  font-size: 18px;
+  line-height: 18px;
+  padding: 0px;
+  text-align: left;
+}
+.sizes {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,31 +278,30 @@ em {
   appearance: none;
 }
 #small {
-  top: 209px;
-  left: 524px;
+  top: 234px;
+  left: 523px;
   height: 75px;
   width: 75px;
 }
 #medium {
-  top: 201px;
-  left: 612px;
+  top: 226px;
+  left: 611px;
   height: 90px;
   width: 90px;
 }
 #large {
-  top: 193px;
-  left: 716px;
+  top: 218px;
+  left: 715px;
   height: 105px;
   width: 105px;
 }
 #family {
-  top: 186px;
-  left: 834px;
+  top: 211px;
+  left: 833px;
   height: 120px;
   width: 120px;
 }
 #small:checked, #medium:checked, #large:checked, #family:checked {
-  accent-color: #fad3a0;
   border: 6px solid peru;
 }
 
@@ -298,20 +310,51 @@ em {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid purple; */
 }
-.toppings .topping {
+.toppings-heading {
+  width: 440px;
+  height: 18px;
+  margin-left: 5px;
+}
+.toppings-heading p {
+  font-size: 18px;
+  line-height: 18px;
+  padding: 0px;
+  text-align: left;
+}
+.topping {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
   height: 100px;
   width: 100px;
-  /* border: 1px solid teal; */
-  margin: 4px;
-  text-align: center;
-  font-size: 16px;
+  margin: 5px;
 }
 .topping img {
-  height: 70px;
+  margin-top: 6px;
+  width: 88px;
+  height: 88px;
 }
 
+#bacon, #sausage, #pepperoni, #peppers, #mushrooms, #anchovies, #onions, #cheese {
+  position: absolute;
+  appearance: none;
+  border-radius: 16px;
+  height: 100px;
+  width: 100px;
+}
+
+#bacon, #sausage, #pepperoni, #anchovies { top: 363px; }
+#peppers, #mushrooms, #onions, #cheese { top: 474px; }
+#bacon, #peppers { left: 523px; }
+#sausage, #mushrooms { left: 633px; }
+#pepperoni, #onions { left: 743px; }
+#anchovies, #cheese { left: 853px; }
+
+#bacon:checked, #sausage:checked, #pepperoni:checked, #peppers:checked, #mushrooms:checked, #anchovies:checked, #onions:checked, #cheese:checked {
+  border: 6px solid #6fa26b; 
+}
 
 /* Form button formatting */
 input.button {
@@ -322,6 +365,7 @@ input.button {
   border-radius: 15px;
   font-weight: 700;
   font-size: 24px;
+  border-color: #6c2f2b;
 }
 input.button.submit {
   color: #fbf0e2;
