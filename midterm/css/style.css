@@ -101,7 +101,6 @@ em {
   height: 300px;
   width: 312px;
 }
-.order img {  }
 
 /* Contact form formatting */
 .contact form div {
@@ -128,6 +127,7 @@ em {
   width: 325px;
   height: 118px;
   padding-top: 5px;
+  margin-bottom: 27px;
 }
 
 /* Order form formatting */
