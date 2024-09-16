@@ -160,12 +160,6 @@ em {
   width: 440px;
   padding: 2px 0;
 }
-.buttons-row {
-  width: 1000px;
-  padding-top: 10px;
-  display: flex;
-  justify-content: center;
-}
 
 /* Order form customer info formatting */
 .customer-info label
@@ -374,4 +368,13 @@ input.button.submit {
 input.button.clear {
   color: #6c2f2b;
   background-color: #fad3a0;
+}
+.order .buttons-row {
+  width: 1000px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.contact input.button {
+  width: 240px;
 }
