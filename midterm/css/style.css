@@ -331,6 +331,22 @@ em {
   height: 88px;
 }
 
+.topping .tooltip {
+  visibility: hidden;
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  width: 90px;
+  height: 25px;
+  border-radius: 12px;
+  background-color: #6c2f2b;
+  color: #fbf0e2;
+  padding: 5px 0;
+  margin-left: -89px;
+  margin-top: 69px;
+}
+.topping:hover .tooltip { visibility: visible; }
+
 #bacon, #sausage, #pepperoni, #peppers, #mushrooms, #anchovies, #onions, #cheese {
   position: absolute;
   appearance: none;
@@ -340,7 +356,7 @@ em {
 }
 
 #bacon, #sausage, #pepperoni, #anchovies { top: 363px; }
-#peppers, #mushrooms, #onions, #cheese { top: 474px; }
+#peppers, #mushrooms, #onions, #cheese { top: 473px; }
 #bacon, #peppers { left: 523px; }
 #sausage, #mushrooms { left: 633px; }
 #pepperoni, #onions { left: 743px; }
