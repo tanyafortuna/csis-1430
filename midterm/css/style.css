@@ -95,12 +95,53 @@ em {
   width: 262px;
 }
 .index img {
-  position: absolute;
-  bottom: 75px;
-  left: 344px;
-  height: 300px;
-  width: 312px;
+  height: 200px;
+  width: 200px;
+  padding: 0px;
+  margin: 0px;
 }
+.index img.reversed {
+  transform: scaleX(-1);
+}
+
+/* Index page formatting */
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 650px;
+  height: 200px;
+  padding: 0px;
+  margin: 75px 175px;
+}
+.image, .order-now {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.image { width: 200px; }
+.order-now { width: 250px; }
+.order-now-cta {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #6fa26b;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fbf0e2;
+  border: 5px dotted #6c2f2b;
+}
+.order-now-cta:visited {
+  color: #fbf0e2;
+}
+.order-now-cta div {
+  margin-top: 54px;
+}
+
+
 
 /* Contact form formatting */
 .contact form div {
