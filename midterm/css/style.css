@@ -89,10 +89,10 @@ em {
 }
 .about img {
   position: absolute;
-  bottom: 75px;
-  right: 100px;
-  height: 280px;
-  width: 262px;
+  bottom: 130px;
+  right: 80px;
+  height: 300px;
+  width: 280px;
 }
 .index img {
   height: 200px;
@@ -141,7 +141,10 @@ em {
   margin-top: 54px;
 }
 
-
+/* About page formatting */
+.wrap-around-img {
+  width: 680px;
+}
 
 /* Contact form formatting */
 .contact form div {
