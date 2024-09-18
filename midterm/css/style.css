@@ -171,7 +171,6 @@ em {
   width: 325px;
   height: 118px;
   padding-top: 5px;
-  margin-bottom: 27px;
 }
 
 /* Order form formatting */
@@ -420,6 +419,7 @@ input.button {
   font-weight: 700;
   font-size: 24px;
   border-color: #6c2f2b;
+  cursor: pointer;
 }
 input.button.submit {
   color: #fbf0e2;
@@ -435,6 +435,14 @@ input.button.clear {
   display: flex;
   justify-content: center;
 }
+.contact .buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 328px;
+  width: 270px;
+  padding-top: 8px;
+}
 .contact input.button {
-  width: 240px;
+  width: 270px;
 }
