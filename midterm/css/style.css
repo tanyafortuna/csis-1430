@@ -140,6 +140,9 @@ em {
 .order-now-cta div {
   margin-top: 54px;
 }
+.order-now-cta:hover {
+  transform: scale(1.2);
+}
 
 /* About page formatting */
 .wrap-around-img {
