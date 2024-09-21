@@ -1,0 +1,23 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-flow: flex wrap; */
+  /* ^^^^ wrap and direction */
+  /* align-content: flex-start; */
+
+  /* gap: 10px; */
+  justify-content: space-around;
+}
+
+section {
+  height: 100px;
+  width: 100px;
+  border: 1px solid mediumvioletred;
+  transition: background-color 300ms, rotate 300ms, scale 300ms;
+}
+
+section:hover {
+  background-color: wheat;
+  rotate: 10deg;
+  scale: 1.25;
+}
