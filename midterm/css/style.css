@@ -7,7 +7,7 @@
   font-family: "Nanum Gothic", sans-serif;
 }
 body {
-  width: 1000px;
+  width: 1152px;
   margin: 0 auto;
 }
 
@@ -55,7 +55,7 @@ nav p {
 /* Main */
 main {
   background-color: #fbf0e2;
-  height: 665px;
+  height: 729px;
   border: 2px solid #6c2f2b;
   border-top: none;
   position: relative;
@@ -63,7 +63,7 @@ main {
 main > div {
   font-size: 24px;
   color: #6c2f2b;
-  padding: 20px 100px;
+  padding: 20px 176px;
   text-align: justify;
 }
 h1 {
@@ -82,15 +82,15 @@ em {
 /* Images */
 .contact img {
   position: absolute;
-  bottom: 110px;
-  right: 80px;
+  bottom: 175px;
+  right: 125px;
   height: 275px;
   width: 178px;
 }
 .about img {
   position: absolute;
-  bottom: 130px;
-  right: 80px;
+  bottom: 200px;
+  right: 165px;
   height: 300px;
   width: 280px;
 }
@@ -111,7 +111,7 @@ em {
   width: 650px;
   height: 200px;
   padding: 0px;
-  margin: 75px 175px;
+  margin: 100px auto;
 }
 .image, .order-now {
   display: flex;
@@ -148,7 +148,7 @@ em {
 
 /* About page formatting */
 .wrap-around-img {
-  width: 680px;
+  width: 835px;
 }
 
 /* Contact form formatting */
@@ -187,26 +187,33 @@ em {
 }
 .order p { 
   padding: 8px 0; 
-  font-size: 24px;
   text-align: center;
   margin: 0 auto;
+  font-size: 24px;
 }
-.order p.comments {
+.order div.comments {
+  flex-wrap: wrap;
+}
+.order p.comments.header {
   padding-top: 16px;
+  padding-bottom: 0px;
+  width: 440px;
+}
+.order p.comments.subheader {
+  font-size: 16px;
 }
 .order .two-columns {
   display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   padding: 0;
-  width: 920px;
+  width: 950px;
 }
 .order .left-column {
   width: 440px;
-  margin-right: 20px;
 }
 .order .right-column {
   width: 440px;
-  margin-left: 20px;
 }
 .two-columns > div > div {
   display: flex;
@@ -276,6 +283,7 @@ em {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding-top: 16px;
 }
 .size-heading {
   width: 440px;
@@ -325,26 +333,26 @@ em {
   appearance: none;
 }
 #small {
-  top: 234px;
-  left: 523px;
+  top: 248px;
+  left: 613px;
   height: 75px;
   width: 75px;
 }
 #medium {
-  top: 226px;
-  left: 611px;
+  top: 241px;
+  left: 702px;
   height: 90px;
   width: 90px;
 }
 #large {
-  top: 218px;
-  left: 715px;
+  top: 233px;
+  left: 807px;
   height: 105px;
   width: 105px;
 }
 #family {
-  top: 211px;
-  left: 833px;
+  top: 226px;
+  left: 925px;
   height: 120px;
   width: 120px;
 }
@@ -357,6 +365,7 @@ em {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding-top: 16px;
 }
 .toppings-heading {
   width: 440px;
@@ -408,12 +417,12 @@ em {
   width: 100px;
 }
 
-#bacon, #sausage, #pepperoni, #anchovies { top: 363px; }
-#peppers, #mushrooms, #onions, #cheese { top: 473px; }
-#bacon, #peppers { left: 523px; }
-#sausage, #mushrooms { left: 633px; }
-#pepperoni, #onions { left: 743px; }
-#anchovies, #cheese { left: 853px; }
+#bacon, #sausage, #pepperoni, #anchovies { top: 392px; }
+#peppers, #mushrooms, #onions, #cheese { top: 502px; }
+#bacon, #peppers { left: 614px; }
+#sausage, #mushrooms { left: 724px; }
+#pepperoni, #onions { left: 834px; }
+#anchovies, #cheese { left: 944px; }
 
 #bacon:checked, #sausage:checked, #pepperoni:checked, #peppers:checked, #mushrooms:checked, #anchovies:checked, #onions:checked, #cheese:checked {
   border: 6px solid #6fa26b; 
@@ -440,8 +449,7 @@ input.button.clear {
   background-color: #fad3a0;
 }
 .order .buttons-row {
-  width: 1000px;
-  padding-top: 10px;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
 }
@@ -449,7 +457,7 @@ input.button.clear {
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  left: 250px; 
+  left: 326px; 
   width: 425px; 
   padding-top: 8px;
 }
