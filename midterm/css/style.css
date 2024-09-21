@@ -133,6 +133,7 @@ em {
   font-weight: 600;
   color: #fbf0e2;
   border: 5px dotted #6c2f2b;
+  transition: 250ms linear;
 }
 .order-now-cta:visited {
   color: #fbf0e2;
@@ -141,7 +142,8 @@ em {
   margin-top: 54px;
 }
 .order-now-cta:hover {
-  transform: scale(1.2);
+  scale: 1.2;
+  color: #fad3a0;
 }
 
 /* About page formatting */
