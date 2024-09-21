@@ -191,6 +191,9 @@ em {
   text-align: center;
   margin: 0 auto;
 }
+.order p.comments {
+  padding-top: 16px;
+}
 .order .two-columns {
   display: flex;
   margin: 0 auto;
