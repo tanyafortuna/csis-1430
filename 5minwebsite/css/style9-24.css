@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+main {
+  display: flex;
+}
+
+section {
+  height: 100px;
+  width: 100px;
+  border: 1px solid purple;
+  border-radius: 10px;
+}
+div.pacmans {
+  display: flex;
+}
+.pacman.head {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: gold;
+}
+.pacman.mouth {
+  height: 0;
+  width: 0;
+  border: 100px solid transparent;
+  border-right-color: white;
+  position: relative;
+  top: -200px;
+}
+
+.pacman.better {
+  width: 0;
+  border-radius: 50%;
+  border: 100px solid gold;
+  border-right-color: transparent;
+}
+.spacer {
+  height: 100px;
+}
+.square {
+  height: 200px;
+  width: 200px;
+  margin-left: 100px;
+  background-color: darkorange;
+}
+.rotated {
+  rotate: 45deg;
+  position: relative;
+  top: -200px;
+}
+
+.ghosty {
+  position: relative;
+}
+.ghosty .body {
+  height: 200px;
+  width: 160px;
+  background-color: orchid;
+  border-radius: 100px 100px 0 0;
+}
+.ghosty .eyes {
+  border: 1px solid blue;
+  height: 50px;
+  width: 160px;
+  position: absolute;
+  top: 50px;
+}
