@@ -1,0 +1,76 @@
+/* Import logo font */
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+/* Reset page for easier styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set img sizes and flip chart horizontally */
+img {
+  height: 22px;
+  width: 22px;
+  margin: 1px;
+}
+img[src="img/hamburger.webp"] {
+  height: 15px;
+  width: 20px;
+}
+img[src="img/chart.webp"] {
+  transform: scaleX(-1);
+}
+
+/* Style the nav bar */
+nav {
+  height: 45px;
+  border-bottom: 2px solid #f1f2f3; 
+  display: grid;
+  grid-template-columns: 33% 34% 33%;
+  align-items: center;
+  padding: 0 15px;
+}
+nav .wordle {
+  text-align: center;
+  font-family: 'Bevan';
+  font-size: 24px;
+}
+nav .options {
+  text-align: right;
+}
+
+/* Style the 5x6 grid for word guesses */
+.entries {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  grid-template-rows: repeat(6, 50px);
+  gap: 4px;
+  width: 266px;
+  margin: 170px auto;
+}
+.entries div {
+  border: 1px solid #d3d6da;
+}
+
+/* Style the "keyboard" */
+.keys section {
+  display: flex;
+  width: fit-content;
+  margin: 5px auto;
+  gap: 5px;
+}
+.keys div {
+  display: flex;
+  background-color: #d3d6da;
+  height: 50px; 
+  width: 35px;
+  justify-content: center;
+  align-items: center;
+  font-family: tahoma;
+  font-size: 11px;
+  border-radius: 5px;
+}
+.keys .enter, .keys .backspace {
+  width: 55px;
+}
