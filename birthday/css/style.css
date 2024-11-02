@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.styled {
+  width: 575px;
+  margin: 100px auto;
+  padding: 60px;
+  font-size: 20px;
+  font-family: tahoma;
+  text-align: center;
+  border: 5px dotted black;
+  border-radius: 60px;
+}
+.winter {
+  border-color: steelblue;
+  background-color: lightcyan;
+  color: mediumblue;
+}
+.spring {
+  border-color: green;
+  background-color: pink;
+  color: darkgreen;
+}
+.summer {
+  border-color: royalblue;
+  background-color: papayawhip;
+  color: red;
+}
+.fall {
+  border-color: darkorange;
+  background-color: blanchedalmond;
+  color: saddlebrown;
+}
+
+img {
+  display: block;
+  width: 575px;
+  margin: 100px auto;
+  border-radius: 50px;
+  visibility: hidden;
+}
+.show {
+  visibility: visible; 
+}
