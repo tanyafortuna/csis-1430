@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redacted+Script&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ margin: 0px auto;
+ padding: 0 50px;
+ display: grid;
+ grid-template-columns: max-content auto;
+ grid-template-rows: max-content max-content;
+ background-color: #e4d4bd;
+
+}
+
+header {
+  font-family: 'Fira Mono';
+  font-weight: 500;
+  font-size: 60px;
+  text-align: center;
+  margin: 10px;
+  grid-column-start: span 2;
+}
+
+#words {
+  background-color: #ece0d0;
+  border: 1px solid #cdbeaa;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #b6a997;
+  width: max-content;
+  margin-right: 20px;
+}
+
+#words div {
+  height: 30px;
+  margin: 4px 8px;
+}
+
+#words label {
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  text-align: end;
+  padding: 0 10px;
+  font-family: 'Fira Mono';
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#words input {
+  width: 225px;
+  height: 100%;
+  font-family: 'Coming Soon';
+  font-size: 18px;
+  padding-left: 4px;
+  padding-top: 3px;
+  border-radius: 5px;
+  border: 1px solid #cdbeaa;
+  box-shadow: 1px 1px 1px #b6a997;
+}
+
+#words button {
+  background-color: #cdbeaa;
+  font-family: 'Fira Mono';
+  font-weight: 400;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 7px;
+  width: 175px;
+  margin: 20px auto;
+  border: none;
+  display: block;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px #887f71;
+}
+
+#theme {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: fit-content;
+  font-family: 'Fira Mono';
+  font-weight: 400;
+  font-size: 20px;
+  margin: 10px auto 20px auto;
+  height: 30px;
+  border-bottom: 1px solid black;
+}
+
+#theme-label {
+  width: 75px;
+  vertical-align: center;
+}
+
+#secret {
+  width: 215px;
+  font-family: 'Redacted Script';
+  font-size: 25px;
+  vertical-align: center;
+  text-align: end;
+  position: relative;
+  bottom: 8px;
+}
+#secret.shown {
+  font-family: 'Fira Mono';
+  font-size: 20px;
+  bottom: 0;
+}
+
+#story {
+  background-color: #ece0d0;
+  font-family: 'Fira Mono';
+  font-weight: 400;
+  font-size: 19px;
+  padding: 5px 20px;
+  line-height: 1.75;
+  border: 1px solid #cdbeaa;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #b6a997;
+}
+
+#story.campfire {
+  background-color: #b3dfe7;
+  background-image: url('../img/camping.webp');
+  background-size: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+#story .entry {
+  border-bottom: 1px solid black;
+  padding: 0 20px;
+  height: 40px;
+}
