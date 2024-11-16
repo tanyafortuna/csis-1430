@@ -129,24 +129,31 @@ function createForm() {
   for (var i = 0; i < 17; i++) {
     formHTML += '<div>';
     formHTML += '<label for="input=' + i + '">' + labelsCamping[i] + '</label>';
-    formHTML += '<input type="text" id="input-' + i + '">';
+    formHTML +=
+      '<input type="text" id="input-' + i + '" onkeyup="isFilledOut();">';
     formHTML += '</div>';
   }
   formHTML +=
-    '<button id="submit" type="submit" onclick="updatePage();">Tell my story!</button>';
+    '<button id="submit" class="unclickable" type="submit" onclick="updatePage();">Tell my story!</button>';
 
   formHTML += '</form>';
   document.getElementById('words').innerHTML = formHTML;
 }
 
 function updatePage() {
-  document.getElementById('secret').classList.add('shown');
-  document.getElementById('story').classList.add('campfire');
-  updateStory();
   document.getElementById('random').removeAttribute('onclick');
   document.getElementById('random').classList.add('unclickable');
   document.getElementById('submit').removeAttribute('onclick');
   document.getElementById('submit').classList.add('unclickable');
+
+  for (var i = 0; i < 17; i++) {
+    document.getElementById('input-' + i).removeAttribute('onkeyup');
+    document.getElementById('input-' + i).setAttribute('readonly', '');
+  }
+
+  document.getElementById('secret').classList.add('shown');
+  document.getElementById('story').classList.add('campfire');
+  updateStory();
 }
 
 function updateStory() {
@@ -219,4 +226,30 @@ function provideRandomWords() {
   document.getElementById('input-14').value = numbers[(rand + 1) % 7];
   document.getElementById('input-15').value = languages[rand];
   document.getElementById('input-16').value = nounsPlural[rand];
+
+  document.getElementById('submit').classList.remove('unclickable');
+}
+
+function isFilledOut() {
+  if (
+    document.getElementById('input-0').value &&
+    document.getElementById('input-1').value &&
+    document.getElementById('input-2').value &&
+    document.getElementById('input-3').value &&
+    document.getElementById('input-4').value &&
+    document.getElementById('input-5').value &&
+    document.getElementById('input-6').value &&
+    document.getElementById('input-7').value &&
+    document.getElementById('input-8').value &&
+    document.getElementById('input-9').value &&
+    document.getElementById('input-10').value &&
+    document.getElementById('input-11').value &&
+    document.getElementById('input-12').value &&
+    document.getElementById('input-13').value &&
+    document.getElementById('input-14').value &&
+    document.getElementById('input-15').value &&
+    document.getElementById('input-16').value
+  )
+    document.getElementById('submit').classList.remove('unclickable');
+  else document.getElementById('submit').classList.add('unclickable');
 }

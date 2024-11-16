@@ -13,7 +13,7 @@
 
 body {
   margin: 0px auto;
-  padding: 0 50px;
+  padding: 20px 50px 50px 50px;
   display: grid;
   grid-template-columns: 495px auto;
   grid-template-rows: repeat(3, max-content);
@@ -26,7 +26,6 @@ header {
   font-weight: 500;
   font-size: 60px;
   text-align: center;
-  margin-top: 10px;
 }
 
 #words, #story, details {
@@ -76,7 +75,7 @@ header {
   box-shadow: 3px 3px 3px #887f71;
 }
 
-#words button.unclickable { cursor: default; }
+#words button.unclickable { visibility: hidden; }
 
 #theme {
   display: flex;
@@ -139,4 +138,7 @@ details summary {
 
 details ul {
   padding: 10px 30px;
+}
+details ul li {
+  margin-bottom: 10px;
 }
