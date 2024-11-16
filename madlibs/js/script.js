@@ -14,7 +14,7 @@ var labelsCamping = [
   'Color',
   'Animal',
   'Number',
-  'Monster',
+  'Language',
   'Noun (plural)',
 ];
 
@@ -111,11 +111,20 @@ var monsters = [
   'werewolf',
   'bogeyman',
 ];
+var languages = [
+  'Javascript',
+  'Polish',
+  'Spanish',
+  'Pascal',
+  'Ancient Egyptian',
+  'Chinese',
+  'C++',
+];
 
 function createForm() {
   var formHTML = '<form action="javascript:void(0);">';
   formHTML +=
-    '<button type="button" onclick="provideRandomWords();">Random words</button>';
+    '<button id="random" type="button" onclick="provideRandomWords();">Random words</button>';
 
   for (var i = 0; i < 17; i++) {
     formHTML += '<div>';
@@ -124,7 +133,7 @@ function createForm() {
     formHTML += '</div>';
   }
   formHTML +=
-    '<button type="submit" onclick="updatePage();">Tell my story!</button>';
+    '<button id="submit" type="submit" onclick="updatePage();">Tell my story!</button>';
 
   formHTML += '</form>';
   document.getElementById('words').innerHTML = formHTML;
@@ -134,6 +143,10 @@ function updatePage() {
   document.getElementById('secret').classList.add('shown');
   document.getElementById('story').classList.add('campfire');
   updateStory();
+  document.getElementById('random').removeAttribute('onclick');
+  document.getElementById('random').classList.add('unclickable');
+  document.getElementById('submit').removeAttribute('onclick');
+  document.getElementById('submit').classList.add('unclickable');
 }
 
 function updateStory() {
@@ -204,6 +217,6 @@ function provideRandomWords() {
   document.getElementById('input-12').value = colors[rand];
   document.getElementById('input-13').value = animals[(rand + 1) % 7];
   document.getElementById('input-14').value = numbers[(rand + 1) % 7];
-  document.getElementById('input-15').value = monsters[rand];
+  document.getElementById('input-15').value = languages[rand];
   document.getElementById('input-16').value = nounsPlural[rand];
 }
