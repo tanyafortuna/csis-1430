@@ -14,7 +14,7 @@ var labelsCamping = [
   'Color',
   'Animal',
   'Number',
-  'Noun',
+  'Monster',
   'Noun (plural)',
 ];
 
@@ -85,7 +85,7 @@ var animals = [
 ];
 var adverbs = [
   'blissfully',
-  'excitedly',
+  'stupidly',
   'silently',
   'intensely',
   'triumphantly',
@@ -102,6 +102,15 @@ var measuresOfTime = [
   'decades',
 ];
 var colors = ['crimson', 'teal', 'magenta', 'gold', 'indigo', 'lime', 'tan'];
+var monsters = [
+  'vampire',
+  'zombie',
+  'bigfoot',
+  'ghost',
+  'chupacabra',
+  'werewolf',
+  'bogeyman',
+];
 
 function createForm() {
   var formHTML = '<form action="javascript:void(0);">';
@@ -195,6 +204,6 @@ function provideRandomWords() {
   document.getElementById('input-12').value = colors[rand];
   document.getElementById('input-13').value = animals[(rand + 1) % 7];
   document.getElementById('input-14').value = numbers[(rand + 1) % 7];
-  document.getElementById('input-15').value = nouns[(rand + 1) % 7];
+  document.getElementById('input-15').value = monsters[rand];
   document.getElementById('input-16').value = nounsPlural[rand];
 }
