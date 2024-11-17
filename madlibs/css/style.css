@@ -72,7 +72,7 @@ header {
   box-shadow: 3px 3px 3px #887f71;
 }
 
-#words button.unclickable { visibility: hidden; }
+#words button.no-click { visibility: hidden; }
 
 #theme-container {
   display: flex;
@@ -91,7 +91,7 @@ header {
 }
 
 #secret {
-  width: 215px;
+  width: 250px;
   font-family: 'Redacted Script';
   font-size: 25px;
   text-align: end;
@@ -108,9 +108,23 @@ header {
   grid-area: 2 / 2;
   border-radius: 10px;
 }
-#background.campfire {
+#background.camping {
   background-color: #b3dfe7;
   background-image: url('../img/camping.webp');
+  background-size: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+#background.hospital { /* TODO */
+  background-color: #fee7b1;
+  background-image: url('../img/hospital.png');
+  background-size: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+#background.forest { /* TODO */
+  background-color: white;
+  background-image: url('../img/forest.jpg');
   background-size: 100%;
   background-position: center bottom;
   background-repeat: no-repeat;
