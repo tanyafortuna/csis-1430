@@ -16,7 +16,7 @@ body {
   padding: 20px 50px 50px 50px;
   display: grid;
   grid-template-columns: 495px auto;
-  grid-template-rows: repeat(3, max-content);
+  grid-template-rows: repeat(4, max-content);
   gap: 20px;
   background-color: #e4d4bd;
 }
@@ -28,13 +28,10 @@ header {
   text-align: center;
 }
 
-#words, #story, details {
+#words, #output, details {
   border: 1px solid #cdbeaa;
   border-radius: 10px;
   box-shadow: 5px 5px 5px #b6a997;
-}
-
-#words, #story, details {
   background-color: #ece0d0;
 }
 
@@ -77,7 +74,7 @@ header {
 
 #words button.unclickable { visibility: hidden; }
 
-#theme {
+#theme-container {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
@@ -107,13 +104,11 @@ header {
   bottom: 0;
 }
 
-#story {
-  font-size: 19px;
-  padding: 5px 20px;
-  line-height: 1.75;
+#background {
+  grid-area: 2 / 2;
+  border-radius: 10px;
 }
-
-#story.campfire {
+#background.campfire {
   background-color: #b3dfe7;
   background-image: url('../img/camping.webp');
   background-size: 100%;
@@ -121,10 +116,51 @@ header {
   background-repeat: no-repeat;
 }
 
+#output {
+  grid-area: 2 / 2;
+  font-size: 19px;
+  padding: 5px 40px;
+  line-height: 1.75;
+  transition: background-color 2s;
+}
+
+#output.transparent {
+  background-color: transparent;
+}
+
+#story-text { line-height: 1.5;}
+
 #story .entry {
+  display: inline-block;
   border-bottom: 1px solid black;
-  padding: 0 20px;
-  height: 40px;
+  padding: 0;
+  height: 19px;
+  font-family: 'Coming Soon';
+  font-size: 18px;
+  vertical-align: center;
+}
+
+#story .entry.revealed {
+  padding-left: 20px;
+  padding-right: 20px;
+  
+}
+
+.input-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 18px;
+  background-color: black;
+  position: relative;
+  top: 3px;
+  animation: blink .6s linear infinite alternate;
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  45% {opacity: 1;}
+  55% {opacity: 0;}
+  100% {opacity: 0;}
 }
 
 details {
@@ -132,13 +168,6 @@ details {
   padding: 5px;
 }
 
-details summary {
-  cursor: pointer;
-}
-
-details ul {
-  padding: 10px 30px;
-}
-details ul li {
-  margin-bottom: 10px;
-}
+details summary { cursor: pointer; }
+details ul { padding: 10px 30px; }
+details ul li { margin-bottom: 10px; }
