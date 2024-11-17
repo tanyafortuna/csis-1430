@@ -5,11 +5,19 @@
   <script src="js/script.js" defer></script>
   <title>Mad Libs</title>
 </head>
-<body onload="initializePage('hospital');">
-  <header>Mad Libs</header>
-  <section id="words"></section>
-  <section id="background"></section>
-  <section id="output">
+<body id="body" class="no-scroll"> 
+  <header id="header">
+    <h1>Mad Libs</h1>
+    <aside id="prompt">Choose your story:</aside>
+    <nav id="story-choices">
+      <div class="story-option" onclick="initializePage('camping');">I'm Going Camping!</div>
+      <div class="story-option" onclick="initializePage('hospital');">My Hospital Visit</div>
+      <div class="story-option" onclick="initializePage('forest');">The Enchanted Forest</div>
+    </nav>
+  </header>
+  <section id="words" class="hidden collapsed"></section>
+  <section id="background" class="hidden collapsed"></section>
+  <section id="output" class="hidden collapsed">
     <section id="theme-container">
       <div id="theme-label">Theme:</div>
       <div id="secret">The Camping Trip</div>
@@ -19,7 +27,7 @@
       <span class="input-cursor"></span>
     </section>
   </section>
-  <details>
+  <details id="legend" class="hidden collapsed">
     <summary>Grammar legend</summary>
     <ul>
       <li>Noun: A person, place, thing, or concept. Sidewalk, umbrella, teacher, bathtub, nose, and love are all nouns.</li>

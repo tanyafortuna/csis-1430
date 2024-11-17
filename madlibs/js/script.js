@@ -141,10 +141,21 @@ var verbIngs = ['running', 'dying', 'shouting', 'eating', 'drinking', 'squeezing
 //GOOD good
 function initializePage(whichStory) {
   switch (whichStory) {
-    case 'camping': { document.getElementById('secret').innerHTML = 'Our Camping Trip'; break; }
+    case 'camping': { document.getElementById('secret').innerHTML = 'I\'m Going Camping!'; break; }
     case 'hospital': { document.getElementById('secret').innerHTML = 'My Hospital Visit'; break; }
     case 'forest': { document.getElementById('secret').innerHTML = 'The Enchanted Forest'; break; }
   }
+
+  document.getElementById('body').classList.remove('no-scroll');
+
+  document.getElementById('prompt').classList.add('hidden', 'collapsed');
+  document.getElementById('story-choices').classList.add('hidden', 'collapsed');
+
+  document.getElementById('words').classList.remove('hidden', 'collapsed');
+  document.getElementById('background').classList.remove('hidden', 'collapsed');
+  document.getElementById('output').classList.remove('hidden', 'collapsed');
+  document.getElementById('legend').classList.remove('hidden', 'collapsed');
+
   document.getElementById('background').classList.add(whichStory);
   createForm(whichStory);
 }
@@ -169,7 +180,7 @@ function createForm(whichStory) {
     formHTML += '" onkeyup="isFilledOut();">';
     formHTML += '</div>';
   }
-  formHTML += '<button id="submit" class="no-click" onclick="updatePage(\'';
+  formHTML += '<button id="submit" class="hidden" onclick="updatePage(\'';
   formHTML += whichStory;
   formHTML += '\');" type="submit">Tell my story!</button>';
   formHTML += '</form>';
@@ -179,8 +190,8 @@ function createForm(whichStory) {
 
 //GOOD good
 function updatePage(whichStory) {
-  document.getElementById('random').classList.add('no-click');
-  document.getElementById('submit').classList.add('no-click');
+  document.getElementById('random').classList.add('hidden');
+  document.getElementById('submit').classList.add('hidden');
   document.getElementById('random').removeAttribute('onclick');
   document.getElementById('submit').removeAttribute('onclick');
 
@@ -267,7 +278,7 @@ function getRandomWords(whichStory) {
     document.getElementById('input-' + i).value = randEntry;
   }
 
-  document.getElementById('submit').classList.remove('no-click');
+  document.getElementById('submit').classList.remove('hidden');
 }
 
 //GOOD good
@@ -291,8 +302,8 @@ function isFilledOut() {
     document.getElementById('input-15').value &&
     document.getElementById('input-16').value
   )
-    document.getElementById('submit').classList.remove('no-click');
-  else document.getElementById('submit').classList.add('no-click');
+    document.getElementById('submit').classList.remove('hidden');
+  else document.getElementById('submit').classList.add('hidden');
 }
 
 //GOOD fix
