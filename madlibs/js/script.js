@@ -300,63 +300,49 @@ function isFilledOut() {
   else document.getElementById('submit').classList.add('hidden');
 }
 
-//GOOD fix
 function typeStory(story, start = 2500, delay = 50) {
   var letters = story.split('');
-  var num = 0;
 
-  for (var i = 0; i < letters.length; i++) {
+  for (let i = 0, num = 0; i < letters.length; i++) {
     if (letters[i] == '<') {
       num++;
       setTimeout(
-        addClass,
-        start + delay * (i + 1),
-        'story-' + num,
-        'revealed'
+        () => { document.getElementById('story-' + num).classList.add('revealed'); },
+        start + delay * (i + 1)
       );
     } else if (letters[i] == '>') {
       num++;
     } else {
       setTimeout(
-        appendLetter,
-        start + delay * (i + 1),
-        'story-' + num,
-        letters[i]
+        () => { document.getElementById('story-' + num).innerHTML += letters[i]; },
+        start + delay * (i + 1)
       );
     }
   }
 }
 
-//GOOD fix
 function replaceTheme(delay = 50) {
   var theme = document.getElementById('secret').innerText;
   var letters = theme.split('');
   var textLength = letters.length;
 
-  for (var i = 0; i < textLength; i++) {
-    letters.pop();
-    setTimeout(updateInnerHTML, delay * (i + 1), 'secret', letters.join(''));
-  }
-  setTimeout(addClass, delay * textLength, 'secret', 'shown');
-  letters = theme.split('');
-  for (var i = 0; i < textLength; i++) {
+  for (let i = 0, phrase = theme; i < textLength; i++) {
+    phrase = phrase.slice(0, -1);
     setTimeout(
-      appendLetter,
-      delay * (textLength + i + 1),
-      'secret',
-      letters[i]
+      () => { document.getElementById('secret').innerHTML = phrase; },
+      delay * (i + 1)
     );
   }
-}
 
-function appendLetter(elementID, x) {
-  document.getElementById(elementID).innerHTML += x;
-}
+  setTimeout(
+    () => { document.getElementById('secret').classList.add('shown') },
+    delay * textLength
+  );
 
-function updateInnerHTML(elementID, x) {
-  document.getElementById(elementID).innerHTML = x;
-}
-
-function addClass(elementID, x) {
-  document.getElementById(elementID).classList.add(x);
+  for (let i = 0; i < textLength; i++) {
+    setTimeout(
+      () => { document.getElementById('secret').innerHTML += letters[i]; },
+      delay * (textLength + i + 1)
+    );
+  }
 }
