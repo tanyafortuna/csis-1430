@@ -102,9 +102,9 @@ var storyForest = [
   '> castle in an enchanted forest. I found myself here one day after befriending a <',
   '> <',
   '> in <',
-  '>. There are <',
+  '>. What a wonderful place! There are <',
   '> <',
-  '> here! In the <',
+  '> here that bring my meals! In the <',
   '> there is a pool full of <',
   '>. I fall asleep each night on a <',
   '> and dream of <',
@@ -114,7 +114,7 @@ var storyForest = [
   '>. I hope one day you can visit, although the only way to get here now is <',
   '> on a <',
   '> <',
-  '>!'
+  '>! Keep in touch!'
 ];
 
 var adjectives = ['tiny', 'huge', 'scary', 'spiffy', 'shy', 'stinky', 'silly'];
