@@ -9,6 +9,7 @@
   font-family: 'Fira Mono';
   font-weight: 400;
   font-size: 16px;
+  user-select: none;
 }
 
 body {
@@ -58,9 +59,7 @@ nav .story-option {
   cursor: pointer;
 }
 
-aside, nav {
-  transition: height 1s, width 1s, padding 1s, margin 1s;
-}
+aside, nav { transition: height 1s, width 1s, padding 1s, margin 1s; }
 
 .story-option, #words, #output, details {
   border: 1px solid #cdbeaa;
@@ -75,6 +74,7 @@ aside, nav {
   width: 0;
   padding: 0;
   margin: 0;
+  opacity: 0;
 }
 
 #words div {
@@ -102,7 +102,7 @@ aside, nav {
   box-shadow: 1px 1px 1px #b6a997;
 }
 
-#words button {
+button {
   background-color: #cdbeaa;
   padding: 5px;
   border-radius: 7px;
@@ -120,7 +120,7 @@ aside, nav {
   flex-wrap: nowrap;
   width: fit-content;
   font-size: 20px;
-  margin: 10px auto 20px auto;
+  margin: 10px auto 30px auto;
   height: 30px;
   border-bottom: 1px solid black;
 }
@@ -147,27 +147,21 @@ aside, nav {
 #background {
   grid-area: 2 / 2;
   border-radius: 10px;
+  background-size: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
 #background.camping {
   background-color: #b3dfe7;
   background-image: url('../img/camping.webp');
-  background-size: 100%;
-  background-position: center bottom;
-  background-repeat: no-repeat;
 }
-#background.hospital { /* TODO */
+#background.hospital { 
   background-color: #fee7b1;
   background-image: url('../img/hospital.png');
-  background-size: 100%;
-  background-position: center bottom;
-  background-repeat: no-repeat;
 }
-#background.forest { /* TODO */
+#background.forest { 
   background-color: white;
   background-image: url('../img/forest.jpg');
-  background-size: 100%;
-  background-position: center bottom;
-  background-repeat: no-repeat;
 }
 
 #output {
@@ -176,11 +170,8 @@ aside, nav {
   padding: 5px 40px;
   line-height: 1.75;
   transition: background-color 2s;
-}
-
-#output.transparent {
-  background-color: transparent;
-}
+} 
+#output.transparent { background-color: transparent; }
 
 #story-text { line-height: 1.5;}
 
@@ -196,8 +187,7 @@ aside, nav {
 
 #story .entry.revealed {
   padding-left: 20px;
-  padding-right: 20px;
-  
+  padding-right: 20px; 
 }
 
 .input-cursor {
@@ -216,6 +206,9 @@ aside, nav {
   55% {opacity: 0;}
   100% {opacity: 0;}
 }
+
+#play-again { margin-top: 30px; }
+#redo { transition: opacity 1s; }
 
 details {
   grid-column-start: span 2;

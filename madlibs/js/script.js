@@ -138,7 +138,6 @@ var transportation = ['tractor', 'moped', 'train', 'plane', 'clown car', 'ship',
 var verbs = ['kill', 'chew', 'scream', 'slap', 'bathe', 'fart', 'shove'];
 var verbIngs = ['running', 'dying', 'shouting', 'eating', 'drinking', 'squeezing', 'texting'];
 
-//GOOD good
 function initializePage(whichStory) {
   switch (whichStory) {
     case 'camping': { document.getElementById('secret').innerHTML = 'I\'m Going Camping!'; break; }
@@ -160,7 +159,6 @@ function initializePage(whichStory) {
   createForm(whichStory);
 }
 
-//GOOD good
 function createForm(whichStory) {
   var formHTML = '<form action="javascript:void(0);">';
   formHTML += '<button id="random" type="button" onclick="getRandomWords(\'';
@@ -169,7 +167,7 @@ function createForm(whichStory) {
 
   for (var i = 0; i < 17; i++) {
     formHTML += '<div>';
-    formHTML += '<label for="input=' + i + '">';
+    formHTML += '<label for="input-' + i + '">';
     switch (whichStory) {
       case 'camping': { formHTML += labelsCamping[i]; break; }
       case 'hospital': { formHTML += labelsHospital[i]; break; }
@@ -188,7 +186,6 @@ function createForm(whichStory) {
   document.getElementById('words').innerHTML = formHTML;
 }
 
-//GOOD good
 function updatePage(whichStory) {
   document.getElementById('random').classList.add('hidden');
   document.getElementById('submit').classList.add('hidden');
@@ -204,9 +201,9 @@ function updatePage(whichStory) {
   document.getElementById('output').classList.add('transparent');
   replaceTheme();
   typeStory(createStoryText(whichStory));
+  setTimeout(() => { document.getElementById('redo').classList.remove('collapsed', 'hidden'); }, 32500);
 }
 
-//GOOD good
 function createStoryHTML() {
   var storyHTML = '';
 
@@ -219,7 +216,6 @@ function createStoryHTML() {
   document.getElementById('story-text').innerHTML = storyHTML;
 }
 
-//GOOD good
 function createStoryText(whichStory) {
   var entries = [];
   for (var i = 0; i < 17; i++) {
@@ -240,7 +236,6 @@ function createStoryText(whichStory) {
   return storyText;
 }
 
-//TODO
 function getRandomWords(whichStory) {
   var wordTypes;
   switch (whichStory) {
@@ -281,7 +276,6 @@ function getRandomWords(whichStory) {
   document.getElementById('submit').classList.remove('hidden');
 }
 
-//GOOD good
 function isFilledOut() {
   if (
     document.getElementById('input-0').value &&
@@ -310,25 +304,22 @@ function isFilledOut() {
 function typeStory(story, start = 2500, delay = 50) {
   var letters = story.split('');
   var num = 0;
-  var skips = 0;
 
   for (var i = 0; i < letters.length; i++) {
     if (letters[i] == '<') {
-      skips++;
       num++;
       setTimeout(
         addClass,
-        start + delay * (i + 1 - skips),
+        start + delay * (i + 1),
         'story-' + num,
         'revealed'
       );
     } else if (letters[i] == '>') {
-      skips++;
       num++;
     } else {
       setTimeout(
         appendLetter,
-        start + delay * (i + 1 - skips),
+        start + delay * (i + 1),
         'story-' + num,
         letters[i]
       );
@@ -359,16 +350,13 @@ function replaceTheme(delay = 50) {
 }
 
 function appendLetter(elementID, x) {
-  //need
   document.getElementById(elementID).innerHTML += x;
 }
 
 function updateInnerHTML(elementID, x) {
-  //need
   document.getElementById(elementID).innerHTML = x;
 }
 
 function addClass(elementID, x) {
-  //need
   document.getElementById(elementID).classList.add(x);
 }
