@@ -21,9 +21,8 @@ body {
   gap: 20px;
   background-color: #e4d4bd;
 }
-.no-scroll { overflow: hidden; }
 
-header { grid-column-start: span 2; }
+header { grid-area: 1 / 1 / 1 / 3; }
 
 h1 {
   font-weight: 500;
@@ -102,6 +101,12 @@ aside, nav { transition: height 1s, width 1s, padding 1s, margin 1s; }
   box-shadow: 1px 1px 1px #b6a997;
 }
 
+::placeholder {
+  font-family: 'Fira Mono';
+  font-size: 10px;
+  color: transparent;
+}
+
 button {
   background-color: #cdbeaa;
   padding: 5px;
@@ -119,7 +124,6 @@ button {
   justify-content: center;
   flex-wrap: nowrap;
   width: fit-content;
-  font-size: 20px;
   margin: 10px auto 30px auto;
   height: 30px;
   border-bottom: 1px solid black;
@@ -166,14 +170,13 @@ button {
 
 #output {
   grid-area: 2 / 2;
-  font-size: 19px;
   padding: 5px 40px;
   line-height: 1.75;
   transition: background-color 2s;
 } 
 #output.transparent { background-color: transparent; }
 
-#story-text { line-height: 1.5;}
+#story-text { line-height: 1.5; }
 
 #story .entry {
   display: inline-block;
@@ -211,10 +214,142 @@ button {
 #redo { transition: opacity 1s; }
 
 details {
-  grid-column-start: span 2;
+  grid-area: 3 / 1 / 3 / 3;
   padding: 5px;
 }
 
 details summary { cursor: pointer; }
 details ul { padding: 10px 30px; }
 details ul li { margin-bottom: 10px; }
+
+@media (max-width: 1199px) {
+  * { font-size: 14px; }
+  body { 
+    grid-template-columns: 445px auto; 
+    padding: 20px 20px 50px 20px; 
+  }
+  #words label { width: 225px; }
+  #words input { 
+    font-size: 16px; 
+    width: 200px; 
+  }
+  #output { padding: 5px 30px; }
+  #theme-container { height: 24px; }
+  #theme-label { 
+    font-size: 16px; 
+    width: 55px; 
+  }
+  #secret { 
+    font-size: 20px; 
+    width: 220px; 
+    bottom: 6px; 
+  }
+  #secret.shown { font-size: 16px; }
+  #story .entry { 
+    height: 17px; 
+    font-size: 16px; 
+  }
+  .input-cursor { height: 16px; }
+}
+
+@media (max-width: 899px) {
+  * { font-size: 12px; }
+  body { 
+    padding: 20px; 
+    grid-template-columns: 360px auto; 
+  }
+  h1 { font-size: 35px; }
+  aside { font-size: 16px; }
+  nav .story-option { 
+    height: 90px; 
+    width: 140px; 
+    font-size: 20px; 
+  }
+  #words div { height: 27px; }
+  #words label { width: 190px; }
+  #words input { 
+    font-size: 14px; 
+    width: 150px; 
+  }
+  #output { padding: 5px 20px; }
+  #theme-container { height: 20px; }
+  #theme-label { 
+    font-size: 13px; 
+    width: 40px; 
+  }
+  #secret { 
+    font-size: 16px; 
+    width: 190px; 
+    bottom: 5px; 
+  }
+  #secret.shown { font-size: 13px; }
+  #story .entry { 
+    height: 14px; 
+    font-size: 14px; 
+  }
+  #story .entry.revealed { 
+    padding-left: 15px; 
+    padding-right: 15px; 
+  }
+  .input-cursor { height: 14px; }
+  button { width: 150px; }
+}
+
+@media (max-width: 699px) {
+  body { 
+    padding: 5px; 
+    grid-template-columns: 167px auto; 
+    gap: 7px; }
+  h1 { font-size: 25px; }
+  aside { 
+    font-size: 14px; 
+    padding: 30px; 
+  }
+  nav .story-option { margin: 10px 0; }
+  nav { flex-direction: column; }
+  #words div { height: 24px; }
+  #words label { display: none; }
+  ::placeholder { color: grey; }
+  #output { padding: 5px 15px; }
+  #secret { bottom: 3px; }
+  #story .entry.revealed { 
+    padding-left: 10px; 
+    padding-right: 10px; 
+  }
+  button { 
+    width: 125px; 
+    margin: 15px auto;
+  }
+}
+
+@media (max-width: 499px) {
+  * { font-size: 10px; }
+  body { 
+    padding: 15px; 
+    width: max-content; 
+    grid-template-columns: 330px; 
+    grid-template-rows: repeat(4, max-content); 
+  }
+  header { grid-area: 1 / 1; }
+  #background { 
+    grid-area: 4 / 1; 
+    height: 550px; 
+  }
+  #output { 
+    grid-area: 4 / 1; 
+    height: 550px; 
+  }
+  details { grid-area: 3 / 1; }
+  #words label { 
+    display: inline-block; 
+    width: 170px; 
+  }
+  #words input { 
+    font-size: 12px; 
+    width: 140px; 
+    height: 22px; 
+  }
+  ::placeholder { color: transparent; }
+  #story .text { font-size: 12px; }
+  details ul { padding-bottom: 0; }
+}

@@ -57,8 +57,8 @@ var labelsForest = [
 ];
 
 var storyCamping = [
-  'This weekend I am going camping with <',
-  '>. I packed my lantern, sleeping bag, and <',
+  'I am going camping with <',
+  '> this weekend. I packed my lantern, sleeping bag, and <',
   '>. If I <',
   '> in my tent I will be so <',
   '>. We are going to hike, fish, and <',
@@ -160,22 +160,25 @@ function initializePage(whichStory) {
 }
 
 function createForm(whichStory) {
+  var label = '';
   var formHTML = '<form action="javascript:void(0);">';
   formHTML += '<button id="random" type="button" onclick="getRandomWords(\'';
   formHTML += whichStory;
   formHTML += '\');">Random words</button>';
 
   for (var i = 0; i < 17; i++) {
+    switch (whichStory) {
+      case 'camping': { label = labelsCamping[i]; break; }
+      case 'hospital': { label = labelsHospital[i]; break; }
+      case 'forest': { label = labelsForest[i]; break; }
+    }
+
     formHTML += '<div>';
     formHTML += '<label for="input-' + i + '">';
-    switch (whichStory) {
-      case 'camping': { formHTML += labelsCamping[i]; break; }
-      case 'hospital': { formHTML += labelsHospital[i]; break; }
-      case 'forest': { formHTML += labelsForest[i]; break; }
-    }
-    formHTML += '</label>';
+    formHTML += label + '</label>';
     formHTML += '<input type="text" id="input-' + i;
-    formHTML += '" onkeyup="isFilledOut();">';
+    formHTML += '" onkeyup="isFilledOut();" placeholder="';
+    formHTML += label + '">';
     formHTML += '</div>';
   }
   formHTML += '<button id="submit" class="hidden" onclick="updatePage(\'';
@@ -202,6 +205,8 @@ function updatePage(whichStory) {
   replaceTheme();
   typeStory(createStoryText(whichStory));
   setTimeout(() => { document.getElementById('redo').classList.remove('collapsed', 'hidden'); }, 32500);
+  if (window.innerWidth < 500)
+    window.scrollTo({ top: 1000, left: 0, behavior: "smooth" });
 }
 
 function createStoryHTML() {
