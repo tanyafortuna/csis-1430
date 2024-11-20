@@ -117,6 +117,7 @@ button {
   display: block;
   cursor: pointer;
   box-shadow: 3px 3px 3px #887f71;
+  color: black !important;
 }
 
 #theme-container {

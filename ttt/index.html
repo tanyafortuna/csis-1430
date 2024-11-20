@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <title>Tic Tac Toe</title>
+</head>
+<body>
+  <header>Tic Tac Toe</header>
+  <section id="player-setup">
+    <form action="javascript:void(0);">
+      <div>
+        <label for="p1">Player 1:</label>
+        <input id="p1">
+      </div>
+      <div>
+        <label for="p2">Player 2:</label>
+        <input id="p2">
+      </div>
+      <div><button onclick="setPlayers();">Let's play!</button></div>
+    </form>
+  </section>
+  <section id="scoreboard" class="hide">
+    <div class="marker">X</div>
+    <div></div>
+    <div class="marker">O</div>
+    <div id="p1-name"></div>
+    <div id="tie-name"></div>
+    <div id="p2-name"></div>
+    <div id="p1-score"></div>
+    <div id="tie-score"></div>
+    <div id="p2-score"></div>
+  </section>
+  <section id="gameboard">
+    <div id="gb-1" class="r1 c1">X</div>
+    <div id="gb-2" class="r1 c2">O</div>
+    <div id="gb-3" class="r1 c3"></div>
+    <div id="gb-4" class="r2 c1"></div>
+    <div id="gb-5" class="r2 c2">X</div>
+    <div id="gb-6" class="r2 c3">O</div>
+    <div id="gb-7" class="r3 c1"></div>
+    <div id="gb-8" class="r3 c2"></div>
+    <div id="gb-9" class="r3 c3"></div>
+  </section>
+  <details id="how-to-play">
+    <summary>How to play</summary>
+    <ul>
+      <li>The game is played on a grid that's 3 squares by 3 squares.</li>
+      <li>One player is represented by X and the other by O.</li>
+      <li>Players take turns putting their marks in empty squares.</li>
+      <li>The first player to get 3 of their marks in a row (horizontally, vertically, or diagonally) is the winner.</li>
+      <li>If all 9 squares are full and no player has 3 marks in a row, the game ends in a tie.</li>
+    </ul>
+  </details>
+</body>
+</html>
