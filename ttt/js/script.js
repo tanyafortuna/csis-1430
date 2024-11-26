@@ -75,25 +75,18 @@ function changeTurn(startFresh = false) {
 
 function isWin() {
   for (var i = 0; i < winCodes.length; i++) {
-    if ((totals[whoseTurn] & winCodes[i]) == winCodes[i]) {
-      console.log('winner' + winCodes[i]);
+    if ((totals[whoseTurn] & winCodes[i]) == winCodes[i]) 
       return true;
-    }
   }
 
-  console.log('no winner yet');
   return false;
 }
 
 function isCatsGame() {
-  if (totals[0] + totals[1] == 511) {
-    console.log('tie');
+  if (totals[0] + totals[1] == 511) 
     return true;
-  }
-  else {
-    console.log('not a tie');
+  else 
     return false;
-  }
 }
 
 function resetGame(playAgain = false) {
