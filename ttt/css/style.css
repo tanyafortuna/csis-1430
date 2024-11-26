@@ -37,7 +37,7 @@ header {
   z-index: 2;
   width: 300px; 
   height: 100px;
-  transition: opacity 1s;
+  transition: opacity 0.5s;
 }
 #player-setup.hide {
   opacity: 0;
@@ -93,7 +93,7 @@ button {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 5px;
-  transition: opacity 1s 1s;
+  transition: opacity 0.5s 0.5s, z-index 0.5s 0.5s;
   border-radius: 10px;
   border: 1px solid #B9A3BF;
   box-shadow:  0 0 10px 5px #EFD8F2;
@@ -106,8 +106,34 @@ button {
 #scoreboard div[id*="name"] { font-size: 16px; }
 #scoreboard div[id*="score"] { color: #A38FA6; font-size: 24px; }
 
+#scoreboard #game-over { font-size: 23px; text-decoration: underline; } 
+#scoreboard #game-over.banner { grid-area: 1 / 1 / 1 / 4; }
+
 #scoreboard.hide {
   opacity: 0;
+  z-index: 0;
+}
+
+#win-message { 
+  grid-area: 2 / 2;
+  z-index: 3;
+  width: 300px; 
+  height: 100px;
+  transition: opacity 0.5s 0.5s, z-index 0.5s 0.5s;
+  border-radius: 10px;
+  border: 1px solid #B9A3BF;
+  box-shadow:  0 0 10px 5px #EFD8F2;
+  background-color: white;
+  text-align: center;
+}
+#win-message.hide {
+  opacity: 0;
+  z-index: 0;
+}
+#winner { font-size: 24px; }
+#win-message button {
+  width: 50px;
+  margin: 3px;
 }
 
 #gameboard {
@@ -129,9 +155,7 @@ button {
 #gameboard .c1 { border-left: none; }
 #gameboard .c3 { border-right: none; }
 
-#gameboard div.hover-x:hover {
-
-}
+#gameboard .clickable { cursor: pointer; }
 
 details { 
   grid-area: 4 / span 3;

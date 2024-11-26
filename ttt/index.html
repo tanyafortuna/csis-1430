@@ -22,9 +22,9 @@
     </form>
   </section>
   <section id="scoreboard" class="hide">
-    <div class="marker">X</div>
-    <div></div>
-    <div class="marker">O</div>
+    <div id="p1-symbol" class="marker">X</div>
+    <div id="game-over"></div>
+    <div id="p2-symbol" class="marker">O</div>
     <div id="p1-name"></div>
     <div id="tie-name"></div>
     <div id="p2-name"></div>
@@ -32,13 +32,19 @@
     <div id="tie-score"></div>
     <div id="p2-score"></div>
   </section>
+  <section id="win-message" class="hide">
+    <p id="winner"></p>
+    <p>Play again?</p>
+    <button id="play-again" onclick="resetGame(true);">Yes</button>
+    <button id="end-game" onclick="endGame();">No</button>
+  </section>
   <section id="gameboard">
-    <div id="gb-1" class="r1 c1">X</div>
-    <div id="gb-2" class="r1 c2">O</div>
+    <div id="gb-1" class="r1 c1"></div>
+    <div id="gb-2" class="r1 c2"></div>
     <div id="gb-3" class="r1 c3"></div>
     <div id="gb-4" class="r2 c1"></div>
-    <div id="gb-5" class="r2 c2">X</div>
-    <div id="gb-6" class="r2 c3">O</div>
+    <div id="gb-5" class="r2 c2"></div>
+    <div id="gb-6" class="r2 c3"></div>
     <div id="gb-7" class="r3 c1"></div>
     <div id="gb-8" class="r3 c2"></div>
     <div id="gb-9" class="r3 c3"></div>
