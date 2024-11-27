@@ -23,7 +23,10 @@ function updateWins() {
 
 function playGame(clickedDiv, divValue) {
   // add x or o
-  clickedDiv.innerText = whoseTurn ? 'O' : 'X';
+  if ((wins[0] + wins[1] + wins[2]) % 2 == 0) 
+    clickedDiv.innerText = whoseTurn ? 'O' : 'X';
+  else
+    clickedDiv.innerText = whoseTurn ? 'X' : 'O';
 
   // increment player's total
   totals[whoseTurn] += divValue;
@@ -66,12 +69,24 @@ function playGame(clickedDiv, divValue) {
 }
 
 function changeTurn(startFresh = false) {
-  if (startFresh)
-    whoseTurn = 0;
-  else
+  if (startFresh) {
+    if ((wins[0] + wins[1] + wins[2]) % 2 == 0) {
+      whoseTurn = 0;
+      document.getElementById('p1-symbol').classList.add('active');
+      document.getElementById('p2-symbol').classList.remove('active');
+    }
+    else {
+      whoseTurn = 1;
+      document.getElementById('p1-symbol').classList.remove('active');
+      document.getElementById('p2-symbol').classList.add('active');
+    }
+  }
+  else {
     whoseTurn ? whoseTurn = 0 : whoseTurn = 1;
+    document.getElementById('p1-symbol').classList.toggle('active');
+    document.getElementById('p2-symbol').classList.toggle('active');
+  }
 }
-
 
 function isWin() {
   for (var i = 0; i < winCodes.length; i++) {
@@ -92,6 +107,17 @@ function isCatsGame() {
 function resetGame(playAgain = false) {
   updateWins();
   changeTurn(true);
+
+  // change who goes first every other time
+  if ((wins[0] + wins[1] + wins[2]) % 2 == 0) {
+    document.getElementById('p1-symbol').innerHTML = '<p>X</p>';
+    document.getElementById('p2-symbol').innerHTML = '<p>O</p>';
+  }
+  else {
+    document.getElementById('p1-symbol').innerHTML = '<p>O</p>';
+    document.getElementById('p2-symbol').innerHTML = '<p>X</p>';
+
+  }
 
   document.getElementById('scoreboard').classList.toggle('hide');
   if (playAgain) {    // game has already been played, so hide win message

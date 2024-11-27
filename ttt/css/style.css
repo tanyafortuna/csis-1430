@@ -92,19 +92,44 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 5px;
+  gap: 3px;
+  padding: 4px 1px 7px 1px;
   transition: opacity 0.5s 0.5s, z-index 0.5s 0.5s;
   border-radius: 10px;
   border: 1px solid #B9A3BF;
-  box-shadow:  0 0 10px 5px #EFD8F2;
+  box-shadow: 0 0 10px 5px #EFD8F2;
   background-color: white;
   padding-bottom: 3px;
 }
 
-#scoreboard div { text-align: center; vertical-align: center; }
-#scoreboard div.marker { font-size: 30px; height: 30px; }
-#scoreboard div[id*="name"] { font-size: 16px; }
-#scoreboard div[id*="score"] { color: #A38FA6; font-size: 24px; }
+#scoreboard div { 
+  text-align: center; 
+}
+#scoreboard div.marker { 
+  height: 28px; 
+  margin: 0 auto;
+}
+#scoreboard div.marker p {
+  width: 28px;
+  height: 28px;
+  font-size: 28px; 
+  position: relative;
+  bottom: 5px;
+}
+#scoreboard div[id*="score"] { 
+  color: #A38FA6; 
+  font-size: 24px; 
+  height: 24px;
+}
+#scoreboard div[id*="name"] { 
+  font-size: 16px; 
+  height: 27px;
+}
+#scoreboard div.marker.active { 
+  box-shadow: 0 0 8px 4px #EFD8F2;
+  border: 1px solid #B9A3BF; 
+  border-radius: 50%;
+}
 
 #scoreboard #game-over { font-size: 23px; text-decoration: underline; } 
 #scoreboard #game-over.banner { grid-area: 1 / 1 / 1 / 4; }
