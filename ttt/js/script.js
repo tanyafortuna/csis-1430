@@ -57,6 +57,7 @@ function playGame(clickedDiv, divValue) {
 
     // make last div unclickable
     clickedDiv.removeAttribute('onclick');
+    clickedDiv.classList.remove('clickable');
   }
   else {
     // toggle player turn
