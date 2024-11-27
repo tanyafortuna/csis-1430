@@ -181,6 +181,7 @@ button {
 #gameboard .c3 { border-right: none; }
 
 #gameboard .clickable { cursor: pointer; }
+#gameboard .clickable:hover { background: radial-gradient(#EFD8F2 30%, transparent 30%); }
 
 details { 
   grid-area: 4 / span 3;
