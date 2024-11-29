@@ -98,16 +98,23 @@ function changeTurn(startFresh = false) {
       whoseTurn = 1;
       document.getElementById('p1-symbol').classList.remove('active');
       document.getElementById('p2-symbol').classList.add('active');
-      if (numPlayers == 1) playComputerTurn();
     }
   }
   else {
     whoseTurn ? whoseTurn = 0 : whoseTurn = 1;
     document.getElementById('p1-symbol').classList.toggle('active');
     document.getElementById('p2-symbol').classList.toggle('active');
-
-    if (numPlayers == 1 && whoseTurn == 1) playComputerTurn();
   }
+
+  if (numPlayers == 1 && whoseTurn == 1) playComputerTurn();
+
+  // show whose turn it is, briefly
+  document.getElementById('whose-turn').innerText = names[whoseTurn] + '\'s turn!';
+  document.getElementById('tic-tac-toe').classList.toggle('hide');
+  document.getElementById('whose-turn').classList.toggle('hide');
+  setTimeout(() => { document.getElementById('tic-tac-toe').classList.toggle('hide') }, 1000);
+  setTimeout(() => { document.getElementById('whose-turn').classList.toggle('hide') }, 1000);
+
 }
 
 function isWin(score) {

@@ -9,7 +9,7 @@ function resetComputer() {
 function playComputerTurn() {
   var spotNum = pickSpot();
   var spotElement = document.getElementById('gb-' + (pickSpot() + 1));
-  setTimeout(() => { playGame(spotElement, 2 ** spotNum) }, 1000);
+  setTimeout(() => { playGame(spotElement, 2 ** spotNum) }, 2500);
 }
 
 function pickSpot() {
