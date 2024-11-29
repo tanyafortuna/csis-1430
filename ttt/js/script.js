@@ -9,8 +9,11 @@ var numPlayers;
 
 function setNumPlayers(num) {
   numPlayers = num;
-  document.getElementById('p2').setAttribute('readonly', '');
-  document.getElementById('p2').value = 'Computer';
+
+  if (num == 1) {
+    document.getElementById('p2').setAttribute('readonly', '');
+    document.getElementById('p2').value = 'Computer';
+  }
 
   document.getElementById('num-players').classList.toggle('hide');
   document.getElementById('player-setup').classList.toggle('hide');
