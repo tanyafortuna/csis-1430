@@ -4,11 +4,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="js/script.js" defer></script>
+  <script src="js/computer-logic.js" defer></script>
   <title>Tic Tac Toe</title>
 </head>
 <body>
   <header>Tic Tac Toe</header>
-  <section id="player-setup">
+  <section id="num-players">
+    <div>How many players?</div>
+    <div><button onclick="setNumPlayers(1);">1-player</button></div>
+    <div><button onclick="setNumPlayers(2);">2-player</button></div>
+  </section>
+  <section id="player-setup" class="hide">
     <form action="javascript:void(0);">
       <div>
         <label for="p1">Player 1:</label>
@@ -18,7 +24,7 @@
         <label for="p2">Player 2:</label>
         <input id="p2">
       </div>
-      <div><button onclick="setPlayers();">Let's play!</button></div>
+      <div><button onclick="setPlayerNames();">Let's play!</button></div>
     </form>
   </section>
   <section id="scoreboard" class="hide">

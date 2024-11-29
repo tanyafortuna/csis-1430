@@ -32,6 +32,33 @@ header {
   vertical-align: center;
 }
 
+button {
+  padding: 2px;
+  border-radius: 10px;
+  width: 150px;
+  background: linear-gradient(#B9A3BF, 10%, #EFD8F2, 90%, #B9A3BF);
+  border: none;
+  border: 1px solid black;
+  cursor: pointer;
+  color: black !important; 
+}
+
+#num-players {
+  grid-area: 2 / 2;
+  z-index: 2;
+  width: 300px;
+  height: 100px;
+  transition: opacity 0.5s;
+  text-align: center;
+}
+#num-players.hide {
+  opacity: 0;
+  z-index: 0;
+}
+#num-players button {
+  margin-top: 4px;
+}
+
 #player-setup { 
   grid-area: 2 / 2;
   z-index: 2;
@@ -71,17 +98,6 @@ input:focus { outline: none !important; }
 form div:nth-child(3) {
   grid-column: span 2;
   width: 100%;
-}
-
-button {
-  padding: 2px;
-  border-radius: 10px;
-  width: 150px;
-  background: linear-gradient(#B9A3BF, 10%, #EFD8F2, 90%, #B9A3BF);
-  border: none;
-  border: 1px solid black;
-  cursor: pointer;
-  color: black !important; 
 }
 
 #scoreboard {

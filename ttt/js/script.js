@@ -5,8 +5,18 @@ var whoseTurn;                  // 0 = p1, 1 = p2
 var winCodes = [7, 56, 73, 84, 146, 273, 292, 448];
 var winSound = new Audio('wav/hooray.wav');
 var tieSound = new Audio('wav/aww.wav');
+var numPlayers;
 
-function setPlayers() {
+function setNumPlayers(num) {
+  numPlayers = num;
+  document.getElementById('p2').setAttribute('readonly', '');
+  document.getElementById('p2').value = 'Computer';
+
+  document.getElementById('num-players').classList.toggle('hide');
+  document.getElementById('player-setup').classList.toggle('hide');
+}
+
+function setPlayerNames() {
   names[0] = document.getElementById('p1').value;
   names[1] = document.getElementById('p2').value;
 
@@ -33,7 +43,7 @@ function playGame(clickedDiv, divValue) {
   // increment player's total
   totals[whoseTurn] += divValue;
 
-  if (isWin()) {
+  if (isWin(totals[whoseTurn])) {
     // declare winner
     document.getElementById('winner').innerText = names[whoseTurn] + " wins!";
     document.getElementById('scoreboard').classList.add('hide');
@@ -88,18 +98,21 @@ function changeTurn(startFresh = false) {
       whoseTurn = 1;
       document.getElementById('p1-symbol').classList.remove('active');
       document.getElementById('p2-symbol').classList.add('active');
+      if (numPlayers == 1) playComputerTurn();
     }
   }
   else {
     whoseTurn ? whoseTurn = 0 : whoseTurn = 1;
     document.getElementById('p1-symbol').classList.toggle('active');
     document.getElementById('p2-symbol').classList.toggle('active');
+
+    if (numPlayers == 1 && whoseTurn == 1) playComputerTurn();
   }
 }
 
-function isWin() {
+function isWin(score) {
   for (var i = 0; i < winCodes.length; i++) {
-    if ((totals[whoseTurn] & winCodes[i]) == winCodes[i]) 
+    if ((score & winCodes[i]) == winCodes[i]) 
       return true;
   }
 
@@ -107,15 +120,12 @@ function isWin() {
 }
 
 function isCatsGame() {
-  if (totals[0] + totals[1] == 511) 
-    return true;
-  else 
-    return false;
+  return (totals[0] + totals[1] == 511) ? true : false;
 }
 
 function resetGame(playAgain = false) {
   updateWins();
-  changeTurn(true);
+  resetComputer();
 
   // change who goes first every other time
   if ((wins[0] + wins[1] + wins[2]) % 2 == 0) {
@@ -125,7 +135,6 @@ function resetGame(playAgain = false) {
   else {
     document.getElementById('p1-symbol').innerHTML = '<p>O</p>';
     document.getElementById('p2-symbol').innerHTML = '<p>X</p>';
-
   }
 
   document.getElementById('scoreboard').classList.toggle('hide');
@@ -145,6 +154,8 @@ function resetGame(playAgain = false) {
     square.classList.add('clickable');
     square.innerText = "";
   }
+  // set the correct player's turn (alternates every other time)
+  changeTurn(true);
 }
 
 function endGame() {
