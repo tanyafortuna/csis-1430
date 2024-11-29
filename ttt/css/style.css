@@ -242,3 +242,7 @@ details li {
   form { gap: 17px; }
   #gameboard div { border: 2px solid black; }
 }
+
+@media (min-width: 361px) and (min-height: 656px) {
+  body { margin-top: calc((100vh - 616px) / 2); }
+}
