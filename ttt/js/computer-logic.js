@@ -8,13 +8,13 @@ function resetComputer() {
 
 function playComputerTurn() {
   var spotNum = pickSpot();
-  var spotElement = document.getElementById('gb-' + (pickSpot() + 1));
+  var spotElement = document.getElementById('gb-' + pickSpot());
   setTimeout(() => { playGame(spotElement, 2 ** spotNum) }, 2500);
 }
 
 function pickSpot() {
   for (var n = 0; n < 9; n++) {
-    var ele = document.getElementById('gb-' + (n + 1));
+    var ele = document.getElementById('gb-' + n);
     weights[n] = 0;
 
     if (ele.innerText != 'X' && ele.innerText != 'O') {

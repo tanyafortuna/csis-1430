@@ -54,8 +54,8 @@ function playGame(clickedDiv, divValue) {
 
     // make all divs unclickable
     for (var i = 0; i < 9; i++) {
-      document.getElementById('gb-' + (i + 1)).removeAttribute('onclick');
-      document.getElementById('gb-' + (i + 1)).classList.remove('clickable');
+      document.getElementById('gb-' + i).removeAttribute('onclick');
+      document.getElementById('gb-' + i).classList.remove('clickable');
     }
 
     // play win sound
@@ -155,7 +155,7 @@ function resetGame(playAgain = false) {
 
   // reset grid
   for (var i = 0; i < 9; i++) {
-    square = document.getElementById('gb-' + (i + 1));
+    square = document.getElementById('gb-' + i);
 
     square.setAttribute('onclick', 'playGame(this, ' + (2 ** i) + ');');
     square.classList.add('clickable');
