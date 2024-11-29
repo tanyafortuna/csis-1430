@@ -3,6 +3,8 @@ var wins = [0, 0, 0];           // p1, p2, ties
 var totals = [0, 0];            // p1, p2
 var whoseTurn;                  // 0 = p1, 1 = p2
 var winCodes = [7, 56, 73, 84, 146, 273, 292, 448];
+var winSound = new Audio('wav/hooray.wav');
+var tieSound = new Audio('wav/aww.wav');
 
 function setPlayers() {
   names[0] = document.getElementById('p1').value;
@@ -45,6 +47,9 @@ function playGame(clickedDiv, divValue) {
       document.getElementById('gb-' + (i + 1)).removeAttribute('onclick');
       document.getElementById('gb-' + (i + 1)).classList.remove('clickable');
     }
+
+    // play win sound
+    winSound.play();
   }
   else if (isCatsGame()) {
     // declare a tie
@@ -58,6 +63,9 @@ function playGame(clickedDiv, divValue) {
     // make last div unclickable
     clickedDiv.removeAttribute('onclick');
     clickedDiv.classList.remove('clickable');
+
+    // play tie sound
+    tieSound.play();
   }
   else {
     // toggle player turn
