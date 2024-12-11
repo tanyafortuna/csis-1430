@@ -2,18 +2,34 @@
 <html>
   <head>
     <title>CSIS 1430</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/carousel.js" defer></script>
   </head>
   <body>
-    <nav>
-      <a href="index.html" class="current-page">Home</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
-      <!-- <a href="#">Style me! &#9662;</a> -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+      <div class="container-fluid justify-content-center">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end fs-5" id="navbarSupportedContent">
+          <div class="navbar-nav">
+            <div class="nav-item nav-link text-dark active" aria-current="page">Home</div>
+            <div onclick="activate('portfolio');" class="nav-item nav-link text-dark">Portfolio</div>
+            <div onclick="activate('reflection');" class="nav-item nav-link text-dark">Reflection</div>
+            <div onclick="activate('contact');" class="nav-item nav-link text-dark">Contact</div>
+          </div>
+        </div>
+      </div>
     </nav>
-    <main class="index">
-      <section class="left-column">
+    <main id="index">
+      <section id="avatar-container">
+        <img id="avatar" src="img/me-avatar-2.png" alt="Drawing of a smiling brunette woman in a dark shirt">
+      </section>
+
+      <section id="blurb-container">
         <h1>Hello, World!</h1>
         <section class="blurb">
           <p>My name is Tanya - great to meet you.</p>
@@ -21,10 +37,81 @@
           <p>What can we build together?</p>
         </section>
       </section>
+    </main>
+    <main id="portfolio" class="hidden">
 
-      <section class="right-column">
-        <img src="img/me-avatar-2.png" alt="Drawing of a smiling brunette woman in a dark shirt">
+      <section id="slideshow-container">
+        <div class="slides">
+          <img src="img/dog.jpg">
+        </div>
+
+        <div class="slides">
+          <img src="img/lotto.png">
+        </div>
+
+        <div class="slides">
+          <img src="img/madlibs.png">
+        </div>
+
+        <div class="slides">
+          <img src="img/ttt.png">
+        </div>
+      </section>
+
+      <section id="carousel-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </section>
+
+      <section id="project-links">
+        <div><a href="tables/index.html">YouTube Videos</a></div>
+        <div><img src="img/html.png"></div>
+        <div>A first dip into HTML</div>
+      
+        <div><a href="superheroes/index.html">Superheroes</a></div>
+        <div><img src="img/css.png"></div>
+        <div>Styling a given HTML page</div>
+      
+        <div><a href="boxes/index.html">Little Boxes</a></div>
+        <div><img src="img/html.png"> <img src="img/css.png"></div>
+        <div>An image using divs & CSS</div>
+      
+        <div><a href="horizontal/index.html">Horizontal Menu</a></div>
+        <div><img src="img/html.png"> <img src="img/css.png"></div>
+        <div>Creating a navbar</div>
+      
+        <div><a href="midterm/index.html">Pizza Parlor</a></div>
+        <div><img src="img/html.png"> <img src="img/css.png"></div>
+        <div>An imaginary pizza shop</div>
+      
+        <div><a href="photoshop/index.html">Photoshop to Code</a></div>
+        <div><img src="img/html.png"> <img src="img/css.png"></div>
+        <div>Matching a given design file</div>
+      
+        <div><a href="birthday/index.html">Happy Birthday</a></div>
+        <div><img src="img/html.png"> <img src="img/css.png"> <img src="img/js.png"></div>
+        <div>Experimenting with JS</div>
+        
+        <div><a href="lotto/index.html">Lotto Numbers</a></div>
+        <div><img src="img/html.png"> <img src="img/css.png"> <img src="img/js.png"></div>
+        <div>A lottery number generator</div>
+      
+        <div><a href="madlibs/index.html">Mad Libs</a></div>
+        <div><img src="img/html.png"> <img src="img/css.png"> <img src="img/js.png"></div>
+        <div>A Mad Libs game</div>
+      
+        <div><a href="ttt/index.html">Tic Tac Toe</a></div>
+        <div><img src="img/html.png"> <img src="img/css.png"> <img src="img/js.png"></div>
+        <div>A Tic Tac Toe game</div>
+      
+        <div><a href="pizza-strap/index.html">Bootstrap Intro</a></div>
+        <div><img src="img/html.png"> <img src="img/bootstrap.png"></div>
+        <div>Making a bootstrap navbar</div>
       </section>
     </main>
+    <main id="reflection" class="hidden"></main>
+    <main id="contact" class="hidden"></main>
   </body>
 </html>
