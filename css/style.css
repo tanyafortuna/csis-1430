@@ -45,7 +45,7 @@ nav .active {
   text-decoration: overline #c9ada7;
 }
 #navbarSupportedContent {
-  z-index: 1;
+  z-index: 2;
   padding: 5px;
 }
 
@@ -174,10 +174,53 @@ nav .active {
   width: 17px;
 }
 
+/* Reflection */
+#reflection { 
+  overflow: auto;
+  max-height: 70vh;
+  padding: 0 15px;
+  text-align: justify;
+
+  background:
+    /* Shadow Cover TOP */
+    linear-gradient(
+      white 30%,
+      rgba(255, 255, 255, 0)
+    ) center top,
+    
+    /* Shadow Cover BOTTOM */
+    linear-gradient(
+      rgba(255, 255, 255, 0), 
+      white 70%
+    ) center bottom,
+    
+    /* Shadow TOP */
+    radial-gradient(
+      farthest-side at 50% 0,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0)
+    ) center top,
+    
+    /* Shadow BOTTOM */
+    radial-gradient(
+      farthest-side at 50% 100%,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0)
+    ) center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 40px, 100% 40px, 100% 20px, 100% 20px;
+    background-attachment: local, local, scroll, scroll;
+}
+#reflection p { margin: 10px 0; }
+
+/* Contact */
+#contact { text-align: center; }
+#contact a:link, #contact a:visited { color: black; }
+
 /* Media queries */
 @media (max-width: 1000px) {
   nav .nav-item { font-size: 16px; }
-  #index, #portfolio, #reflction, #contact { width: 75vw; }
+  #index, #portfolio, #reflection, #contact { width: 75vw; }
   #index {
     grid-template-columns: 125px auto;
     grid-template-rows: 125px;
@@ -196,6 +239,7 @@ nav .active {
   #portfolio #slideshow-container { max-height: 200px; }
   #portfolio .slides, #portfolio .slides img { max-height: 190px; }
   #portfolio #project-links { font-size: 13px; }
+  #reflection { font-size: 13px; }
 }
 
 @media (max-width: 575px) {
@@ -210,7 +254,7 @@ nav .active {
     margin: 0;
     text-decoration: none;
   }
-  #index, #portfolio, #reflction, #contact { width: 80vw; }
+  #index, #portfolio, #reflection, #contact { width: 80vw; }
   #index {
     grid-template-columns: 1fr;
     grid-template-rows: 125px 175px;
