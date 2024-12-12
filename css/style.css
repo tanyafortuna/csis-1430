@@ -233,6 +233,7 @@ nav .active {
   border-radius: 10px;
   border: none;
   background-image: linear-gradient(#ede0d4, #c9ada7);
+  color: black !important;
 }
 
 /* Media queries */
