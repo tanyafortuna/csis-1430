@@ -8,8 +8,8 @@
   user-select: none;
 }
 html {
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   background-image: linear-gradient(#ede0d4, #c9ada7);
   position: relative;
   color: #504542;
@@ -20,8 +20,8 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 50px auto;
   align-items: center;
-  width: 90vw;
-  height: 90vh;
+  width: 90dvw;
+  height: 90dvh;
   top: 5%;
   left: 5%;
   background-color: white;
@@ -51,9 +51,9 @@ nav .active {
 
 /* Main */
 #index, #portfolio, #reflection, #contact {
-  width: 70vw;
+  width: 70dvw;
   margin: 0 auto;
-  margin-bottom: 5vh;
+  margin-bottom: 5dvh;
 }
 .hidden { display: none !important; }
 
@@ -177,7 +177,7 @@ nav .active {
 /* Reflection */
 #reflection { 
   overflow: auto;
-  max-height: 70vh;
+  max-height: 70dvh;
   padding: 0 15px;
   text-align: justify;
 
@@ -230,7 +230,6 @@ nav .active {
 #contact button {
   width: 115px;
   height: 30px;
-  border-radius: 10px;
   border: none;
   background-image: linear-gradient(#ede0d4, #c9ada7);
   color: black !important;
@@ -239,7 +238,7 @@ nav .active {
 /* Media queries */
 @media (max-width: 1000px) {
   nav .nav-item { font-size: 16px; }
-  #index, #portfolio, #reflection, #contact { width: 75vw; }
+  #index, #portfolio, #reflection, #contact { width: 75dvw; }
   #index {
     grid-template-columns: 125px auto;
     grid-template-rows: 125px;
@@ -259,23 +258,25 @@ nav .active {
   #portfolio .slides, #portfolio .slides img { max-height: 190px; }
   #portfolio #project-links { font-size: 13px; }
   #reflection { font-size: 13px; }
+  #contact #contact-info { margin-bottom: 25px; }
   #contact #quotes { grid-template-columns: 100%; }
   #contact { font-size: 13px; }
 }
 
 @media (max-width: 575px) {
   body {
-    width: 96vw;
-    height: 98vh;
-    top: 1%;
-    left: 2%;
+    height: 100dvh;
+    width: 100dvw;
+    top: 0;
+    left: 0;
+    border-radius: 0;
   }
   nav #navbarSupportedContent { text-align: center;}
   nav .nav-item {
     margin: 0;
     text-decoration: none;
   }
-  #index, #portfolio, #reflection, #contact { width: 80vw; }
+  #index, #portfolio, #reflection, #contact { width: 80dvw; }
   #index {
     grid-template-columns: 1fr;
     grid-template-rows: 125px 175px;
@@ -289,6 +290,36 @@ nav .active {
     width: 15px;
   }
   #portfolio #project-links {
+    grid-template-columns: auto auto;
+    column-gap: 10px;
+    row-gap: 5px;
+    margin-top: 5px;
+    font-size: 11px;
+  }
+  #portfolio #project-links :nth-child(3n+2) { display: none;}
+  #contact #contact-info { margin-bottom: 25px; }
+}
+
+@media (orientation: landscape) and (max-height: 575px) {
+  body {
+    height: 100dvh;
+    width: 100dvw;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+  }
+  #index {
+    grid-template-columns: 125px auto;
+    grid-template-rows: 125px;
+    text-align: center;
+    column-gap: 15px;
+  }
+  #portfolio {
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+  }
+  #portfolio #project-links { 
+    grid-area: 1 / 2; 
     grid-template-columns: auto auto;
     column-gap: 10px;
     row-gap: 5px;
