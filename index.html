@@ -6,8 +6,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <script src="js/nav.js" defer></script>
     <script src="js/carousel.js" defer></script>
+    <script src="js/quotes.js" defer></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-light">
@@ -123,6 +124,10 @@
     <main id="contact" class="hidden">
       <section id="contact-info">
         <p>Email me at <a href="mailto:tfortuna@bruinmail.slcc.edu">tfortuna@bruinmail.slcc.edu</a></p>
+      </section>
+      <section id="quotes">
+        <div id="quote-text">"Programming isn’t about what you know; it’s about what you can figure out." – Chris Pine, Learn to Program</div>
+        <button id="quote-button" onclick="updateQuote();">New quote</button>
       </section>
     </main>
   </body>

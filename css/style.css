@@ -214,8 +214,26 @@ nav .active {
 #reflection p { margin: 10px 0; }
 
 /* Contact */
-#contact { text-align: center; }
+#contact { 
+  text-align: center; 
+  display: grid;
+  justify-content: center; 
+}
 #contact a:link, #contact a:visited { color: black; }
+#contact #contact-info { margin-bottom: 100px; }
+#contact #quotes { 
+  display: grid;
+  grid-template-columns: 500px;
+  grid-template-rows: 80px 30px;
+  place-items: center;
+}
+#contact button {
+  width: 115px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  background-image: linear-gradient(#ede0d4, #c9ada7);
+}
 
 /* Media queries */
 @media (max-width: 1000px) {
@@ -240,6 +258,8 @@ nav .active {
   #portfolio .slides, #portfolio .slides img { max-height: 190px; }
   #portfolio #project-links { font-size: 13px; }
   #reflection { font-size: 13px; }
+  #contact #quotes { grid-template-columns: 100%; }
+  #contact { font-size: 13px; }
 }
 
 @media (max-width: 575px) {
