@@ -12,6 +12,7 @@ body {
 }
 
 /* Nav */
+nav { height: 129px; }
 nav ul {
   display: flex;
   justify-content: right;
@@ -284,12 +285,17 @@ em {
   justify-content: center;
   align-items: center;
   padding-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: 18px 130px;
+  margin-left: 5px;;
 }
 .size-heading {
   width: 440px;
   height: 18px;
   margin-top: 8px;
   margin-left: 5px;
+  grid-area: 1 / 1 / 1 / 5;
 }
 .size-heading p {
   font-size: 18px;
@@ -304,6 +310,7 @@ em {
   border-radius: 50%;
   background-color: #fad3a0;
   margin: 5px 7px;
+  position: relative;
 }
 .pizza-info .small {
   height: 75px;
@@ -329,30 +336,24 @@ em {
 }
 #small, #medium, #large, #family {
   position: absolute;
+  top: 0px;
+  left: 0px;
   border-radius: 50%;
   appearance: none;
 }
 #small {
-  top: 248px;
-  left: 613px;
   height: 75px;
   width: 75px;
 }
 #medium {
-  top: 241px;
-  left: 702px;
   height: 90px;
   width: 90px;
 }
 #large {
-  top: 233px;
-  left: 807px;
   height: 105px;
   width: 105px;
 }
 #family {
-  top: 226px;
-  left: 925px;
   height: 120px;
   width: 120px;
 }
@@ -362,15 +363,16 @@ em {
 
 /* Order form toppings formatting */
 .pizza-info.toppings {
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   padding-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 110px);
+  grid-template-rows: 18px 110px 110px;
 }
 .toppings-heading {
   width: 440px;
   height: 18px;
   margin-left: 5px;
+  grid-area: 1 / 1 / 1 / 5;
 }
 .toppings-heading p {
   font-size: 18px;
@@ -383,9 +385,10 @@ em {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  height: 100px;
-  width: 100px;
-  margin: 5px;
+  height: 110px;
+  width: 110px;
+  padding: 5px;
+  position: relative;
 }
 .topping img {
   margin-top: 6px;
@@ -404,8 +407,8 @@ em {
   background-color: #6c2f2b;
   color: #fbf0e2;
   padding: 5px 0;
-  margin-left: -89px;
-  margin-top: 69px;
+  margin-left: -89px; 
+  margin-top: 68px;
 }
 .topping:hover .tooltip { visibility: visible; }
 
@@ -417,12 +420,10 @@ em {
   width: 100px;
 }
 
-#bacon, #sausage, #pepperoni, #anchovies { top: 392px; }
-#peppers, #mushrooms, #onions, #cheese { top: 502px; }
-#bacon, #peppers { left: 614px; }
-#sausage, #mushrooms { left: 724px; }
-#pepperoni, #onions { left: 834px; }
-#anchovies, #cheese { left: 944px; }
+#bacon, #sausage, #pepperoni, #anchovies, #peppers, #mushrooms, #onions, #cheese { 
+  left: 5px; 
+   top: 5px; 
+  }
 
 #bacon:checked, #sausage:checked, #pepperoni:checked, #peppers:checked, #mushrooms:checked, #anchovies:checked, #onions:checked, #cheese:checked {
   border: 6px solid #6fa26b; 
