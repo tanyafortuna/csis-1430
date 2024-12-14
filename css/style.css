@@ -231,6 +231,7 @@ nav .active {
   width: 115px;
   height: 30px;
   border: none;
+  border-radius: 10px;
   background-image: linear-gradient(#ede0d4, #c9ada7);
   color: black !important;
 }
